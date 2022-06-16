@@ -1,13 +1,13 @@
 {
   "templates": [
     {
-      "u": "#*60v4sVKUhFuxQ8tyJM",
+      "u": "*&K5no1o28bCp!X&aMsI",
       "tt": "Id",
       "type": "ft_int",
       "usg": "USAGE_IN_TITLE",
       "num": 0,
       "order": 0,
-      "lib": "VQ7T0rB#nGhL+9%no9X)",
+      "lib": "@W*gfYEoJBjMV:c%+Ot+",
       "r": false,
       "stats": "",
       "hint": "",
@@ -15,8 +15,8 @@
         {
           "s": "auto",
           "i": 0,
-          "o": "#*60v4sVKUhFuxQ8tyJM",
-          "t": "#*60v4sVKUhFuxQ8tyJM"
+          "o": "*&K5no1o28bCp!X&aMsI",
+          "t": "*&K5no1o28bCp!X&aMsI"
         }
       ],
       "depend": "",
@@ -32,21 +32,22 @@
       "readonly": false
     },
     {
-      "u": "GvBWAgQQnlz%EI0>o+Eq",
+      "u": "LUi5m9OpGnD-jnWO(EY*",
       "tt": "Interfaces",
       "type": "ft_subheader",
       "usg": "NOT_USAGE",
       "num": 1,
       "order": 1,
-      "lib": "VQ7T0rB#nGhL+9%no9X)",
+      "lib": "@W*gfYEoJBjMV:c%+Ot+",
       "r": false,
       "stats": "",
       "hint": "",
       "cnt": [
         {
+          "s": "",
           "i": 0,
-          "o": "GvBWAgQQnlz%EI0>o+Eq",
-          "t": "GvBWAgQQnlz%EI0>o+Eq"
+          "o": "LUi5m9OpGnD-jnWO(EY*",
+          "t": "LUi5m9OpGnD-jnWO(EY*"
         }
       ],
       "depend": "",
@@ -62,13 +63,13 @@
       "readonly": false
     },
     {
-      "u": "-&4mQ!r*QnOjNjD-WPDq",
+      "u": "EtL%KoCS4ThWALOC*-*y",
       "tt": "ObjType",
       "type": "ft_lib_entry",
       "usg": "NOT_USAGE",
       "num": 2,
       "order": 2,
-      "lib": "VQ7T0rB#nGhL+9%no9X)",
+      "lib": "@W*gfYEoJBjMV:c%+Ot+",
       "r": false,
       "stats": "",
       "hint": "",
@@ -76,8 +77,8 @@
         {
           "s": "_index_{\"i\":1,\"t\":\"ObjType\"}",
           "i": 0,
-          "o": "-&4mQ!r*QnOjNjD-WPDq",
-          "t": "-&4mQ!r*QnOjNjD-WPDq"
+          "o": "EtL%KoCS4ThWALOC*-*y",
+          "t": "EtL%KoCS4ThWALOC*-*y"
         }
       ],
       "depend": "",
@@ -100,32 +101,35 @@
   "icon": "flat:folder_blue.png",
   "unique_names": false,
   "triggers": "[{\"attrJson\":\"{\\\"arguementsTemplates\\\":[]}\",\"enabled\":true,\"event\":\"ACTION\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/InitalizeDB.js\",\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/Common.js\"],\"moment\":\"LIBRARY_CONTEXT\",\"name\":\"InitializeDB\",\"script\":\"InitializeDB();\"}]",
-  "scripts_permissions": "{\"fileRead\":true,\"fileWrite\":true,\"libraries\":false,\"librariesIds\":[\"SAZUOJwR)JCsWUqIHLen\",\"VQ7T0rB#nGhL+9%no9X)\"],\"librariesTitles\":{\"SAZUOJwR)JCsWUqIHLen\":\"ObjType\",\"VQ7T0rB#nGhL+9%no9X)\":\"Obj\"},\"network\":false}",
+  "filters": "{\"filters\":[]}",
+  "charts": "{\"charts\":[]}",
+  "scripts_permissions": "{\"fileRead\":true,\"fileWrite\":true,\"libraries\":false,\"librariesIds\":[\"SAZUOJwR)JCsWUqIHLen\",\"@W*gfYEoJBjMV:c%+Ot+\",\"C]XPH*H9Xtt+5\\u0026nO\\u003eeH5\",\"S[AylqKofrW+o-dAoYV:\",\"C%el!\\u003eB[@[!SB-yDVSgl\",\"VQ7T0rB#nGhL+9%no9X)\"],\"librariesTitles\":{\"SAZUOJwR)JCsWUqIHLen\":\"ObjType\",\"@W*gfYEoJBjMV:c%+Ot+\":\"Obj\",\"C]XPH*H9Xtt+5\\u0026nO\\u003eeH5\":\"ObjType\",\"S[AylqKofrW+o-dAoYV:\":\"Obj\",\"C%el!\\u003eB[@[!SB-yDVSgl\":\"ObjType\",\"VQ7T0rB#nGhL+9%no9X)\":\"Obj\"},\"network\":false}",
   "related_libraries": [
     {
       "title": "ObjType",
-      "id": "SAZUOJwR)JCsWUqIHLen",
+      "id": "C%el!>B[@[!SB-yDVSgl",
       "color": -2236963,
       "icon": "flat:folder_blue.png",
       "unique_names": false,
-      "triggers": "[{\"enabled\":true,\"event\":\"CREATE_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/Common.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"Create\",\"script\":\"message(\\\"test\\\");\"}]",
-      "entry_pages": "{\"pages\":[{\"d\":true,\"f\":[0,1,2,3],\"hide_aggr\":[],\"inv\":[\"SAZUOJwR)JCsWUqIHLen\"],\"ml\":[\"VQ7T0rB#nGhL+9%no9X)\",\"SAZUOJwR)JCsWUqIHLen\"],\"t\":\"def_page_title\"}]}",
+      "triggers": "[{\"enabled\":true,\"event\":\"CREATE_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/Common.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"onCreate\",\"script\":\"onCreate(\\\"ObjType\\\");\\nentry().link(\\\"CreateInstance\\\", entry());\"}]",
+      "entry_pages": "{\"pages\":[{\"d\":true,\"f\":[0,1,2,3],\"hide_aggr\":[],\"inv\":[\"SAZUOJwR)JCsWUqIHLen\"],\"ml\":[],\"t\":\"def_page_title\"}]}",
       "templates": [
         {
-          "u": "WCPi&gH!3Ve@%BglH*cF",
+          "u": "*&k2B4TLST*x:<a:c4nm",
           "tt": "Obj.Id",
           "type": "ft_int",
           "usg": "USAGE_IN_TITLE",
           "num": 0,
           "order": 0,
-          "lib": "SAZUOJwR)JCsWUqIHLen",
+          "lib": "C%el!>B[@[!SB-yDVSgl",
           "r": false,
           "stats": "",
           "hint": "",
           "cnt": [
             {
-              "o": "WCPi&gH!3Ve@%BglH*cF",
-              "t": "WCPi&gH!3Ve@%BglH*cF"
+              "s": "",
+              "o": "*&k2B4TLST*x:<a:c4nm",
+              "t": "*&k2B4TLST*x:<a:c4nm"
             }
           ],
           "depend": "",
@@ -141,21 +145,22 @@
           "readonly": false
         },
         {
-          "u": "+d&>DT9Fc7dPfnAFQR!T",
+          "u": "-VxHE*;9k*QKhWW]ivs1",
           "tt": "Name",
           "type": "ft_string",
           "usg": "USAGE_IN_TITLE",
           "num": 1,
           "order": 1,
-          "lib": "SAZUOJwR)JCsWUqIHLen",
+          "lib": "C%el!>B[@[!SB-yDVSgl",
           "r": true,
           "stats": "",
           "hint": "",
           "cnt": [
             {
+              "s": "",
               "i": 2,
-              "o": "+d&>DT9Fc7dPfnAFQR!T",
-              "t": "+d&>DT9Fc7dPfnAFQR!T"
+              "o": "-VxHE*;9k*QKhWW]ivs1",
+              "t": "-VxHE*;9k*QKhWW]ivs1"
             }
           ],
           "depend": "",
@@ -171,21 +176,22 @@
           "readonly": false
         },
         {
-          "u": "!Pkl7VUN!LwwXWlxJm-o",
+          "u": "-n(3uRm49L#joGQkmUkr",
           "tt": "Obj",
           "type": "ft_subheader",
           "usg": "NOT_USAGE",
           "num": 2,
           "order": 2,
-          "lib": "SAZUOJwR)JCsWUqIHLen",
+          "lib": "C%el!>B[@[!SB-yDVSgl",
           "r": false,
           "stats": "",
           "hint": "",
           "cnt": [
             {
+              "s": "",
               "i": 0,
-              "o": "!Pkl7VUN!LwwXWlxJm-o",
-              "t": "!Pkl7VUN!LwwXWlxJm-o"
+              "o": "-n(3uRm49L#joGQkmUkr",
+              "t": "-n(3uRm49L#joGQkmUkr"
             }
           ],
           "depend": "",
@@ -201,13 +207,13 @@
           "readonly": false
         },
         {
-          "u": "N]@WfLH*sY>J>T2Fv!(b",
+          "u": "*9x*)Ql6S*MxpH+-0*wb",
           "tt": "CreateInstances",
           "type": "ft_lib_entry",
           "usg": "NOT_USAGE",
           "num": 3,
           "order": 3,
-          "lib": "SAZUOJwR)JCsWUqIHLen",
+          "lib": "C%el!>B[@[!SB-yDVSgl",
           "r": false,
           "stats": "",
           "hint": "",
@@ -215,8 +221,8 @@
             {
               "s": "_index_{\"i\":1,\"t\":\"ObjType\"}",
               "i": 0,
-              "o": "N]@WfLH*sY>J>T2Fv!(b",
-              "t": "N]@WfLH*sY>J>T2Fv!(b"
+              "o": "*9x*)Ql6S*MxpH+-0*wb",
+              "t": "*9x*)Ql6S*MxpH+-0*wb"
             }
           ],
           "depend": "",
