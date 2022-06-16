@@ -52,6 +52,8 @@ function UpdateFields(FieldNames, ObjType, e) {
 	var Obj;
 	var curFieldName;
 	var curValue;
+	var curBase;
+	var curTypeName;
 	// find Obj
 	for (var i = 0; i < Objs.length; i++) {
 		if (e.field("Obj.Id") == Objs[i].field("Id")) {
@@ -64,11 +66,42 @@ function UpdateFields(FieldNames, ObjType, e) {
 	var ObjTypes = ObjTypeLibrary.entries();
 	// loop through FieldNames to be updated
 	for (var i = 0; i < FieldNames.length; i++) {
+		// read current information
 		curFieldName = FieldNames[i];
 		curValue = e.field(curFieldName);
-		// update Obj
-		if (curFieldName.indexOf("Obj.") != -1) {
-			Obj.set(curFieldName.split(".")[1], curValue);
+		if (curFieldName.indexOf(".") != -1) {
+			curBase = curFieldName.split(".")[0];
+			curFieldName = curFieldName.split(".")[1];
 		}
+		else {
+			curBase = ObjType;
+		}
+		// write values to all interfaces
+		if (curBase == "Obj") {
+			Obj.set(curFieldName, curValue);
+		}
+		// loop through all ObjTypes
+		for (var j = 0; j < ObjTypes.length; j++) {
+			curTypeName = ObjTypes[j].field("Name");
+			if (curTypeName != "Obj" && curTypeName != ObjType) { 
+				try {
+					if (curTypeName == curBase) {
+						Obj.field(curTypeName)[0].set(curFieldName, curValue);
+					}
+					else {
+						Obj.field(curTypeName)[0].set(FieldNames[i], curValue);
+					}
+				}
+				catch (err) {
+					message(FieldNames[i] + " not found");
+				}
+			}
+		}
+		// curFieldName = FieldNames[i];
+		// curValue = e.field(curFieldName);
+		// update Obj
+		// if (curFieldName.indexOf("Obj.") != -1) {
+			// Obj.set(curFieldName.split(".")[1], curValue);
+		// }
 	}
 }
