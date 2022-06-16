@@ -51,6 +51,7 @@ function UpdateFields(FieldNames, ObjType, e) {
 	var Objs = ObjLibrary.entries();
 	var Obj;
 	var curFieldName;
+	var curValue;
 	// find Obj
 	for (var i = 0; i < Objs.length; i++) {
 		if (e.field("Obj.Id") == Objs[i].field("Id")) {
@@ -64,6 +65,10 @@ function UpdateFields(FieldNames, ObjType, e) {
 	// loop through FieldNames to be updated
 	for (var i = 0; i < FieldNames.length; i++) {
 		curFieldName = FieldNames[i];
-		message(curFieldName);
+		curValue = e.field(curFieldName);
+		// update Obj
+		if (curFieldName.indexOf("Obj.") != -1) {
+			Obj.set(curFieldName.split(".")[1], curValue);
+		}
 	}
 }
