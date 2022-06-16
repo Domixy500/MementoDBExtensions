@@ -9,6 +9,7 @@ function onCreate(ObjTypeName) {
 	var ObjTypeLibrary = libByName("ObjType");
 	var ObjTypes = ObjTypeLibrary.entries();
 	var ObjType;
+	var InstanceTypeName;
 	try {
 		// find ObjType
 		for (var i = 0; i < ObjTypes.length; i++) {
@@ -17,12 +18,16 @@ function onCreate(ObjTypeName) {
 				break;
 			}
 		}
-		// create Obj
+		// create and link Obj
 		var obj = CreateObject("Obj");
+		LinkInstance(entry(), obj, ObjTypeName);
 		// create Instances
 		var TypeInstances = ObjType.field("CreateInstances");
 		for (var i = 0; i < TypeInstances.length; i++) {
-			CreateInstance(TypeInstances[i].field("Name"), obj);
+			InstanceTypeName = TypeInstances[i].field("Name");
+			if (ObjTypeName != InstanceTypeName) {
+				CreateInstance(InstanceTypeName, obj);
+			}
 		}
 	}
 	catch (err) {
@@ -31,8 +36,12 @@ function onCreate(ObjTypeName) {
 }
 
 function CreateInstance(ObjTypeName, obj) {
-	var Id = obj.field("Id");
 	var Instance = CreateObject(ObjTypeName);
-	Instance.set("Obj.Id", Id);
-	obj.link(ObjTypeName, Instance);
+	LinkInstance(Instance, obj, ObjTypeName)
+}
+
+function LinkInstance(BaseEntry, obj, ObjTypeName) {
+	var Id = obj.field("Id");
+	BaseEntry.set("Obj.Id", Id);
+	obj.link(ObjTypeName, BaseEntry);
 }
