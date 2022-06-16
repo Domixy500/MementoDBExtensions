@@ -45,3 +45,25 @@ function LinkInstance(BaseEntry, obj, ObjTypeName) {
 	BaseEntry.set("Obj.Id", Id);
 	obj.link(ObjTypeName, BaseEntry);
 }
+
+function UpdateFields(FieldNames, ObjType, e) {
+	var ObjLibrary = libByName("Obj");
+	var Objs = ObjLibrary.entries();
+	var Obj;
+	var curFieldName;
+	// find Obj
+	for (var i = 0; i < Objs.length; i++) {
+		if (e.field("Obj.Id") == Objs[i].field("Id")) {
+			Obj = Objs[i];
+			break;
+		}
+	}
+	// get all ObjTypes
+	var ObjTypeLibrary = libByName("ObjType");
+	var ObjTypes = ObjTypeLibrary.entries();
+	// loop through FieldNames to be updated
+	for (var i = 0; i < FieldNames.length; i++) {
+		curFieldName = FieldNames[i];
+		message(curFieldName);
+	}
+}

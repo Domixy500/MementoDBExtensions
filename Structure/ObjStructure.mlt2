@@ -111,7 +111,7 @@
       "color": -2236963,
       "icon": "flat:folder_blue.png",
       "unique_names": false,
-      "triggers": "[{\"enabled\":true,\"event\":\"CREATE_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/Common.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"onCreate\",\"script\":\"onCreate(\\\"ObjType\\\");\\nentry().link(\\\"CreateInstance\\\", entry());\"}]",
+      "triggers": "[{\"enabled\":true,\"event\":\"CREATE_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/Common.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"onCreate\",\"script\":\"onCreate(\\\"ObjType\\\");\\nentry().link(\\\"CreateInstances\\\", entry());\"}]",
       "entry_pages": "{\"pages\":[{\"d\":true,\"f\":[0,1,2,3],\"hide_aggr\":[],\"inv\":[\"SAZUOJwR)JCsWUqIHLen\"],\"ml\":[],\"t\":\"def_page_title\"}]}",
       "templates": [
         {
