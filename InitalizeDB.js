@@ -16,8 +16,6 @@ function InitializeDB() {
 		ObjType_ObjType.set("Name", "ObjType");
 		ObjType_ObjType.link("CreateInstances", Obj_ObjType);
 		ObjType_ObjType.link("CreateInstances", ObjType_ObjType);
-		
-		
 		message("Finished!")
 	}
 	else {

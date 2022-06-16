@@ -1,0 +1,238 @@
+{
+  "templates": [
+    {
+      "u": "#*60v4sVKUhFuxQ8tyJM",
+      "tt": "Id",
+      "type": "ft_int",
+      "usg": "USAGE_IN_TITLE",
+      "num": 0,
+      "order": 0,
+      "lib": "VQ7T0rB#nGhL+9%no9X)",
+      "r": false,
+      "stats": "",
+      "hint": "",
+      "cnt": [
+        {
+          "s": "auto",
+          "i": 0,
+          "o": "#*60v4sVKUhFuxQ8tyJM",
+          "t": "#*60v4sVKUhFuxQ8tyJM"
+        }
+      ],
+      "depend": "",
+      "disp_title": true,
+      "entry_color": false,
+      "show_in_table": true,
+      "column_width": 100,
+      "week_event": 0,
+      "autofill": "",
+      "card_align": 0,
+      "json_options": "{\"displayConvertUnitButton\":false,\"groupSeparator\":false,\"incDelta\":1.0,\"showCalc\":false,\"fieldColorTarget\":0,\"textDrawable\":false}",
+      "unique": false,
+      "readonly": false
+    },
+    {
+      "u": "GvBWAgQQnlz%EI0>o+Eq",
+      "tt": "Interfaces",
+      "type": "ft_subheader",
+      "usg": "NOT_USAGE",
+      "num": 1,
+      "order": 1,
+      "lib": "VQ7T0rB#nGhL+9%no9X)",
+      "r": false,
+      "stats": "",
+      "hint": "",
+      "cnt": [
+        {
+          "i": 0,
+          "o": "GvBWAgQQnlz%EI0>o+Eq",
+          "t": "GvBWAgQQnlz%EI0>o+Eq"
+        }
+      ],
+      "depend": "",
+      "disp_title": true,
+      "entry_color": false,
+      "show_in_table": true,
+      "column_width": 100,
+      "week_event": 0,
+      "autofill": "",
+      "card_align": 0,
+      "json_options": "{\"fieldColorTarget\":0,\"font\":{\"color\":-13783129,\"defaultColor\":false,\"family\":\"sans-serif\",\"size\":18,\"style\":1},\"textDrawable\":false}",
+      "unique": false,
+      "readonly": false
+    },
+    {
+      "u": "-&4mQ!r*QnOjNjD-WPDq",
+      "tt": "ObjType",
+      "type": "ft_lib_entry",
+      "usg": "NOT_USAGE",
+      "num": 2,
+      "order": 2,
+      "lib": "VQ7T0rB#nGhL+9%no9X)",
+      "r": false,
+      "stats": "",
+      "hint": "",
+      "cnt": [
+        {
+          "s": "_index_{\"i\":1,\"t\":\"ObjType\"}",
+          "i": 0,
+          "o": "-&4mQ!r*QnOjNjD-WPDq",
+          "t": "-&4mQ!r*QnOjNjD-WPDq"
+        }
+      ],
+      "depend": "",
+      "disp_title": true,
+      "entry_color": false,
+      "show_in_table": true,
+      "column_width": 100,
+      "week_event": 0,
+      "autofill": "",
+      "card_align": 0,
+      "json_options": "{\"attrJsonTemplates\":[],\"relationType\":2,\"fieldColorTarget\":0,\"textDrawable\":false}",
+      "unique": false,
+      "readonly": false
+    }
+  ],
+  "version": 23,
+  "entry_pages": "{\"pages\":[{\"d\":true,\"f\":[0,1,2],\"hide_aggr\":[],\"inv\":[],\"ml\":[],\"t\":\"def_page_title\"}]}",
+  "title": "Obj",
+  "color": -2236963,
+  "icon": "flat:folder_blue.png",
+  "unique_names": false,
+  "triggers": "[{\"attrJson\":\"{\\\"arguementsTemplates\\\":[]}\",\"enabled\":true,\"event\":\"ACTION\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/InitalizeDB.js\",\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/Common.js\"],\"moment\":\"LIBRARY_CONTEXT\",\"name\":\"InitializeDB\",\"script\":\"InitializeDB();\"}]",
+  "scripts_permissions": "{\"fileRead\":true,\"fileWrite\":true,\"libraries\":false,\"librariesIds\":[\"SAZUOJwR)JCsWUqIHLen\",\"VQ7T0rB#nGhL+9%no9X)\"],\"librariesTitles\":{\"SAZUOJwR)JCsWUqIHLen\":\"ObjType\",\"VQ7T0rB#nGhL+9%no9X)\":\"Obj\"},\"network\":false}",
+  "related_libraries": [
+    {
+      "title": "ObjType",
+      "id": "SAZUOJwR)JCsWUqIHLen",
+      "color": -2236963,
+      "icon": "flat:folder_blue.png",
+      "unique_names": false,
+      "triggers": "[{\"enabled\":true,\"event\":\"CREATE_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/Common.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"Create\",\"script\":\"message(\\\"test\\\");\"}]",
+      "entry_pages": "{\"pages\":[{\"d\":true,\"f\":[0,1,2,3],\"hide_aggr\":[],\"inv\":[\"SAZUOJwR)JCsWUqIHLen\"],\"ml\":[\"VQ7T0rB#nGhL+9%no9X)\",\"SAZUOJwR)JCsWUqIHLen\"],\"t\":\"def_page_title\"}]}",
+      "templates": [
+        {
+          "u": "WCPi&gH!3Ve@%BglH*cF",
+          "tt": "Obj.Id",
+          "type": "ft_int",
+          "usg": "USAGE_IN_TITLE",
+          "num": 0,
+          "order": 0,
+          "lib": "SAZUOJwR)JCsWUqIHLen",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "o": "WCPi&gH!3Ve@%BglH*cF",
+              "t": "WCPi&gH!3Ve@%BglH*cF"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"displayConvertUnitButton\":false,\"groupSeparator\":false,\"incDelta\":1.0,\"showCalc\":false,\"fieldColorTarget\":0,\"fieldDelimiter\":\"\",\"textDrawable\":false}",
+          "unique": true,
+          "readonly": false
+        },
+        {
+          "u": "+d&>DT9Fc7dPfnAFQR!T",
+          "tt": "Name",
+          "type": "ft_string",
+          "usg": "USAGE_IN_TITLE",
+          "num": 1,
+          "order": 1,
+          "lib": "SAZUOJwR)JCsWUqIHLen",
+          "r": true,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "i": 2,
+              "o": "+d&>DT9Fc7dPfnAFQR!T",
+              "t": "+d&>DT9Fc7dPfnAFQR!T"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"fieldColorTarget\":0,\"fieldDelimiter\":\"\",\"textDrawable\":false}",
+          "unique": true,
+          "readonly": false
+        },
+        {
+          "u": "!Pkl7VUN!LwwXWlxJm-o",
+          "tt": "Obj",
+          "type": "ft_subheader",
+          "usg": "NOT_USAGE",
+          "num": 2,
+          "order": 2,
+          "lib": "SAZUOJwR)JCsWUqIHLen",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "i": 0,
+              "o": "!Pkl7VUN!LwwXWlxJm-o",
+              "t": "!Pkl7VUN!LwwXWlxJm-o"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"fieldColorTarget\":0,\"font\":{\"color\":-13783129,\"defaultColor\":false,\"family\":\"sans-serif\",\"size\":18,\"style\":1},\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        },
+        {
+          "u": "N]@WfLH*sY>J>T2Fv!(b",
+          "tt": "CreateInstances",
+          "type": "ft_lib_entry",
+          "usg": "NOT_USAGE",
+          "num": 3,
+          "order": 3,
+          "lib": "SAZUOJwR)JCsWUqIHLen",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "_index_{\"i\":1,\"t\":\"ObjType\"}",
+              "i": 0,
+              "o": "N]@WfLH*sY>J>T2Fv!(b",
+              "t": "N]@WfLH*sY>J>T2Fv!(b"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"attrJsonTemplates\":[],\"relationType\":0,\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        }
+      ],
+      "scripts_permissions": "{\"fileRead\":true,\"fileWrite\":true,\"libraries\":true,\"librariesIds\":[],\"librariesTitles\":{},\"network\":false}"
+    }
+  ]
+}
