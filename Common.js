@@ -10,28 +10,23 @@ function onCreate(ObjTypeName) {
 	var ObjTypes = ObjTypeLibrary.entries();
 	var ObjType;
 	var InstanceTypeName;
-	try {
-		// find ObjType
-		for (var i = 0; i < ObjTypes.length; i++) {
-			if (ObjTypeName == ObjTypes[i].field("Name")) {
-				ObjType = ObjTypes[i];
-				break;
-			}
-		}
-		// create and link Obj
-		var obj = CreateObject("Obj");
-		LinkInstance(entry(), obj, ObjTypeName);
-		// create Instances
-		var TypeInstances = ObjType.field("CreateInstances");
-		for (var i = 0; i < TypeInstances.length; i++) {
-			InstanceTypeName = TypeInstances[i].field("Name");
-			if (ObjTypeName != InstanceTypeName) {
-				CreateInstance(InstanceTypeName, obj);
-			}
+	// find ObjType
+	for (var i = 0; i < ObjTypes.length; i++) {
+		if (ObjTypeName == ObjTypes[i].field("Name")) {
+			ObjType = ObjTypes[i];
+			break;
 		}
 	}
-	catch (err) {
-		message(err.message);
+	// create and link Obj
+	var obj = CreateObject("Obj");
+	LinkInstance(entry(), obj, ObjTypeName);
+	// create Instances
+	var TypeInstances = ObjType.field("CreateInstances");
+	for (var i = 0; i < TypeInstances.length; i++) {
+		InstanceTypeName = TypeInstances[i].field("Name");
+		if (ObjTypeName != InstanceTypeName) {
+			CreateInstance(InstanceTypeName, obj);
+		}
 	}
 }
 
@@ -46,62 +41,78 @@ function LinkInstance(BaseEntry, obj, ObjTypeName) {
 	obj.link(ObjTypeName, BaseEntry);
 }
 
-function UpdateFields(FieldNames, ObjType, e) {
+function UpdateFields(FieldNames, ObjTypeName, e) {
+	// find BaseObject
 	var ObjLibrary = libByName("Obj");
-	var Objs = ObjLibrary.entries();
+	var AllObjs = ObjLibrary.entries();
 	var Obj;
-	var curFieldName;
-	var curValue;
-	var curBase;
-	var curTypeName;
-	// find Obj
-	for (var i = 0; i < Objs.length; i++) {
-		if (e.field("Obj.Id") == Objs[i].field("Id")) {
-			Obj = Objs[i];
+	for (var i = 0; i < AllObjs.length; i++) {
+		if (e.field("Obj.Id") == AllObjs[i].field("Id")) {
+			Obj = AllObjs[i];
 			break;
 		}
 	}
-	// get all ObjTypes
+	// find all interfaces
+	var InterfaceName;
+	var InterfaceNames = [];
+	var Interfaces = [];
 	var ObjTypeLibrary = libByName("ObjType");
 	var ObjTypes = ObjTypeLibrary.entries();
-	// loop through FieldNames to be updated
-	for (var i = 0; i < FieldNames.length; i++) {
-		// read current information
-		curFieldName = FieldNames[i];
-		curValue = e.field(curFieldName);
-		if (curFieldName.indexOf(".") != -1) {
-			curBase = curFieldName.split(".")[0];
-			curFieldName = curFieldName.split(".")[1];
+	for (var i = 0; i < ObjTypes.length; i++) {
+		InterfaceName = ObjTypes[i].field("Name");
+		if (InterfaceName == "") {}
+		else if (InterfaceName == "Obj") {
+			InterfaceNames.push(InterfaceName);
+			Interfaces.push(Obj);
 		}
 		else {
-			curBase = ObjType;
-		}
-		// write values to all interfaces
-		if (curBase == "Obj") {
-			Obj.set(curFieldName, curValue);
-		}
-		// loop through all ObjTypes
-		for (var j = 0; j < ObjTypes.length; j++) {
-			curTypeName = ObjTypes[j].field("Name");
-			if (curTypeName != "Obj" && curTypeName != ObjType) { 
-				try {
-					if (curTypeName == curBase) {
-						Obj.field(curTypeName)[0].set(curFieldName, curValue);
-					}
-					else {
-						Obj.field(curTypeName)[0].set(FieldNames[i], curValue);
-					}
-				}
-				catch (err) {
-					message(FieldNames[i] + " not found");
+			try {
+				if (Obj.field(InterfaceName).length > 0) {
+					InterfaceNames.push(InterfaceName);
+					Interfaces.push(Obj.field(InterfaceName)[0]);
 				}
 			}
+			catch (err) {}
 		}
-		// curFieldName = FieldNames[i];
-		// curValue = e.field(curFieldName);
-		// update Obj
-		// if (curFieldName.indexOf("Obj.") != -1) {
-			// Obj.set(curFieldName.split(".")[1], curValue);
-		// }
+	}
+	// loop through FieldNames to be updated
+	var fieldName;
+	var localName;
+	var storageName;
+	var fieldValue;
+	var Interface;
+	for (var i = 0; i < FieldNames.length; i++) {
+		fieldName = FieldNames[i];
+		fieldValue = e.field(FieldNames[i]);
+		if (fieldName.indexOf(".") != -1) {
+			storageName = fieldName.split(".")[0];
+			localName = fieldName.split(".")[1];
+		}
+		else {
+			storageName = ObjTypeName;
+			localName = fieldName;
+		}
+		for (var j = 0; j < Interfaces.length; j++) {
+			Interface = Interfaces[j];
+			InterfaceName = InterfaceNames[j];
+			if (InterfaceName == ObjTypeName) {}
+			else if (InterfaceName == storageName) {
+				if (typeof fieldValue == "object") {
+					for (var k = 0; k < fieldValue.length; k++) {
+						message(fieldValue[k].name);
+						Interface.link(localName, fieldValue[k]);
+					}
+				}
+				else {
+					Interface.set(localName, fieldValue);
+				}
+			}
+			else {
+				try {
+					Interface.set(storageName + "." + localName, fieldValue);
+				}
+				catch (err) {}
+			}
+		}
 	}
 }
