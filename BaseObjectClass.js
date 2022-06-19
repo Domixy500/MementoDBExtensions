@@ -10,14 +10,17 @@ function Obj(e) {
   this.Current = e;
   message("Current: " + this.Current);
   try {
+    message("try");
     this.Base = this.Current.field("Obj")[0];
   }
   catch(err) {
+    message("catch");
     this.Base = this.Current;
   }
   message("Base: " + this.Base);
 }
 
 Obj.prototype.Id = function() {
-  return this.Base.field("Id");
+  var val = this.Base.field("Id");
+  return val;
 }
