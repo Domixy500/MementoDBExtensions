@@ -24,4 +24,4 @@ Obj.prototype.Id = function() {
   var val = this.Current.field("Id");
   message(val);
   return val;
-}
+};
