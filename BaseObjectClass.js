@@ -14,3 +14,7 @@ function Obj(e) {
     this.Base = this.Current;
   }
 }
+
+BaseObject.prototype.Id = function() {
+  return this.Base.field("Id");
+}
