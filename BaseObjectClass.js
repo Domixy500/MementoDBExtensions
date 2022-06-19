@@ -6,7 +6,9 @@ function Create(typeName) {
 }
 
 function Obj(e) {
+  message("e: " + e);
   this.Current = e;
+  message("Current: " + this.Current);
   try {
     this.Base = this.Current.field("Obj")[0];
   }
