@@ -15,6 +15,6 @@ function Obj(e) {
   }
 }
 
-BaseObject.prototype.Id = function() {
+Obj.prototype.Id = function() {
   return this.Base.field("Id");
 }
