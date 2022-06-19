@@ -14,7 +14,7 @@ function Obj(e) {
     message("try");
   }
   catch(err) {
-    message("catch");
+    message(err);
     this.Base = this.Current;
   }
   message("Base: " + this.Base);
