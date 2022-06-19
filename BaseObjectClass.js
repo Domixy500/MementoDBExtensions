@@ -15,6 +15,7 @@ function Obj(e) {
   catch(err) {
     this.Base = this.Current;
   }
+  message("Base: " + this.Base);
 }
 
 Obj.prototype.Id = function() {
