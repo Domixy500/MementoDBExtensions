@@ -21,6 +21,6 @@ function Obj(e) {
 }
 
 Obj.prototype.Id = function() {
-  var val = this.Base.field("Id");
+  var val = this.Current.field("Id");
   return val;
 }
