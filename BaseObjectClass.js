@@ -10,8 +10,8 @@ function Obj(e) {
   this.Current = e;
   message("Current: " + this.Current);
   try {
-    message("try");
     this.Base = this.Current.field("Obj")[0];
+    message("try");
   }
   catch(err) {
     message("catch");
