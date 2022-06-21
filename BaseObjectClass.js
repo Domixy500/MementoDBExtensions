@@ -24,7 +24,7 @@ Obj.prototype.getObj = function() {
 message("e2");
       this.Current.link("Obj", val);
 message("e3");
-      message("Obj created with Id: " + this.Id());
+      message("Obj created with Id: " + val.field("Id"));
 message("e4");
     }
     else {
