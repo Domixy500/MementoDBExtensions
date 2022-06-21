@@ -20,7 +20,7 @@ function Obj(e) {
 }
 
 Obj.prototype.Id = function() {
-  return this.Obj.field("Id");
+  return this.Obj().field("Id");
 };
 Obj.prototype.Obj = function() {
   var val;
@@ -30,6 +30,7 @@ Obj.prototype.Obj = function() {
       val = "noObj";
       val = Create("_Obj");
       this.Current.link("Obj", val);
+      message("Obj created with Id: " + this.Id());
     }
     else {
       val = val[0];
