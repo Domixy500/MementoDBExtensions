@@ -39,7 +39,7 @@ Obj.prototype.Obj = function() {
 };
 Obj.prototype.UpdateDisplayName = function() {
   var val = eval(DISPLAY_NAME);
-  this.set("DisplayName", val);
+  this.Current.set("DisplayName", val);
   return val;
 };
 Obj.prototype.Save = function() {
