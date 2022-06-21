@@ -17,13 +17,11 @@ Obj.prototype.getObj = function() {
   var val;
   try {
     val = this.Current.field("Obj");
-    message(val.length);
     if(val.length == 0) {
-      message("e1");
       val = Create("Obj");
-message("e2");
       this.Current.link("Obj", val);
-message("e3");
+message(val);
+message(val.field("Id"));
       message("Obj created with Id: " + val.field("Id"));
 message("e4");
     }
