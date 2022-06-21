@@ -17,6 +17,7 @@ Obj.prototype.getObj = function() {
   var val;
   try {
     val = this.Current.field("Obj");
+    message(val.length);
     if(val.length == 0) {
       val = Create("Obj");
       this.Current.link("Obj", val);
