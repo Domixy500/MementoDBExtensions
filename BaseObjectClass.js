@@ -7,13 +7,13 @@ function Create(typeName) {
 
 function Obj(e) {
   this.Current = e;
-  this.Obj = this.Obj();
+  this.Obj = this.getObj();
 }
 
 Obj.prototype.Id = function() {
-  return this.Obj().field("Id");
+  return this.Obj.field("Id");
 };
-Obj.prototype.Obj = function() {
+Obj.prototype.getObj = function() {
   var val;
   try {
     val = this.Current.field("Obj");
