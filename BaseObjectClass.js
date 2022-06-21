@@ -7,12 +7,15 @@ function Create(typeName) {
 
 function Obj(e) {
   this.Current = e;
-  try {
-    this.Base = this.Current.field("Obj")[0];
+  if(this.Current.field("Obj") === undefined) {
+    message("Obj not defined!");
   }
-  catch(err) {
-    this.Base = this.Current;
-  }
+  //try {
+    //this.Base = this.Current.field("Obj")[0];
+  //}
+  //catch(err) {
+    //this.Base = this.Current;
+  //}
 }
 
 Obj.prototype.Id = function() {
