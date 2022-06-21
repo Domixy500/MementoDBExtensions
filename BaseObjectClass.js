@@ -7,20 +7,20 @@ function Create(typeName) {
 
 function Obj(e) {
   this.Current = e;
-  this.Obj = this.getObj();
+  this.Obj();
 }
 
 Obj.prototype.Id = function() {
-  return this.Obj.field("Id");
+  return this.Obj().field("Id");
 };
-Obj.prototype.getObj = function() {
+Obj.prototype.Obj = function() {
   var val;
   try {
     val = this.Current.field("Obj");
     if(val.length == 0) {
       val = Create("Obj");
       this.Current.link("Obj", val);
-      message("Obj created with Id: " + val.field("Id"));
+      message("Obj created with Id: " + this.Id());
     }
     else {
       val = val[0];
