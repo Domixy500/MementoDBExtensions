@@ -7,7 +7,7 @@ function Create(typeName) {
 
 function Obj(e) {
   this.Current = e;
-  message(this.Obj);
+  message(this.Obj());
   //if(this.Current.field("Obj") === undefined) {
     //message("Obj not defined!");
   //}
