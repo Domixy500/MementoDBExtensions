@@ -27,7 +27,6 @@ Obj.prototype.Obj = function() {
   try {
     val = this.Current.field("Obj");
     if(val.length == 0) {
-      val = "noObj";
       val = Create("_Obj");
       this.Current.link("Obj", val);
       message("Obj created with Id: " + this.Id());
@@ -37,7 +36,13 @@ Obj.prototype.Obj = function() {
     }
   }
   catch(err) {
-    val = undefined;
+    if(lib().title == "_Obj") {
+      val = this.Current;
+    }
+    else {
+      val = undefined;
+      message("Field 'Obj' is not defined for library " + lib().title + "!")
+    }
   }
   return val;
 };
