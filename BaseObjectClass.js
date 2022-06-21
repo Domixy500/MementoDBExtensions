@@ -20,10 +20,7 @@ Obj.prototype.getObj = function() {
     if(val.length == 0) {
       val = Create("Obj");
       this.Current.link("Obj", val);
-message(val);
-message(val.field("Id"));
       message("Obj created with Id: " + val.field("Id"));
-message("e4");
     }
     else {
       val = val[0];
