@@ -4,6 +4,15 @@ function Create(typeName) {
   obj = library.create(obj);
   return obj;
 }
+function findInLib(libName, fieldName, fieldValue) {
+  var allEntries = libByName(libName).entries();
+  for(e of allEntries) {
+    if(e.field(fieldName) == fieldValue) {
+      return e;
+      break;
+    }
+  }
+}
 
 function Obj(e) {
   this.Current = e;
@@ -42,9 +51,12 @@ Obj.prototype.Obj = function() {
   try {
     val = this.Current.field("Obj");
     if(val.length == 0) {
+      //create Obj
       val = Create("Obj");
       this.Current.link("Obj", val);
       message("Obj created with Id: " + this.Id());
+      //link with ObjType if exists
+      var ObjType = findInLib("ObjType", "Name", this.TypeName());
     }
     else {
       val = val[0];
