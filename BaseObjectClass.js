@@ -40,7 +40,8 @@ Obj.prototype.CreateInterfaces = function(ObjType) {
   var Interface;
   var InterfacesToCreate = [];
   try {
-    for(Interface of ObjType.field("CreateInterfaces")) {
+    for(Interface in ObjType.field("CreateInterfaces")) {
+      message(Interface);
       message(Interface.field("Name"));
     }
   }
