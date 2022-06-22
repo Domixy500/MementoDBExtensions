@@ -7,9 +7,9 @@ function Create(typeName) {
 function findInLib(libName, fieldName, fieldValue) {
   var val;
   var allEntries = libByName(libName).entries();
-  for(e of allEntries) {
-    if(e.field(fieldName) == fieldValue) {
-      val = e;
+  for(var i = 0; i < allEntries.length; i++) {
+    if(allEntries[i].field(fieldName) == fieldValue) {
+      val = allEntries[i];
       break;
     }
   }
@@ -33,8 +33,8 @@ Obj.prototype.field = function(fieldName) {
 Obj.prototype.set = function(fieldName, newValue) {
   return this.Current.set(fieldName, newValue);
 };
-Obj.prototype.ObjType = function() {
-  return this.Obj().field("Type")[0];
+Obj.prototype.isObjType = function() {
+  return this.Obj().field("isObjType");
 };
 Obj.prototype.CreateInterfaces = function() {
   var Interface;
@@ -43,9 +43,9 @@ Obj.prototype.CreateInterfaces = function() {
     for(Interface of this.ObjType().field("CreateInterfaces")) {
       message(Interface.field("Name"));
     }
+  }
   catch(err) {
-
-    }
+    message("test");
   }
 };
 Obj.prototype.Obj = function() {
@@ -59,6 +59,13 @@ Obj.prototype.Obj = function() {
       message("Obj created with Id: " + this.Id());
       //link with ObjType if exists
       var ObjType = findInLib("ObjType", "Name", this.TypeName());
+      try {
+        this.Obj().link("isObjType", ObjType);
+        this.CreateInterfaces();
+      }
+      catch(err) {
+        message(this.TypeName() + " is not registered!");
+      }
     }
     else {
       val = val[0];
