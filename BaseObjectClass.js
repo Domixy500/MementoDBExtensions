@@ -52,13 +52,15 @@ Obj.prototype.CreateInterfaces = function(ObjType) {
   }
 };
 Obj.prototype.Obj = function() {
-  var val;
+  var baseObj;
   try {
-    val = this.Current.field("Obj");
-    if(val.length == 0) {
+    baseObj = this.Current.field("Obj");
+    if(baseObj.length == 0) {
       //create Obj
-      val = Create("Obj");
-      this.Current.link("Obj", val);
+      baseObj = Create("Obj");
+      this.Current.link("Obj", baseObj);
+      //link primary Interface
+      baseObj.link(this.TypeName(), this.Current);
       message("Obj created with Id: " + this.Id());
       //link with ObjType if exists
       var ObjType = findInLib("ObjType", "Name", this.TypeName());
@@ -74,15 +76,15 @@ message("e2 " + ObjType);
       }
     }
     else {
-      val = val[0];
+      baseObj = baseObj[0];
     }
   }
   catch(err) {
     if(this.TypeName() == "Obj") {
-      val = this.Current;
+      baseObj = this.Current;
     }
     else {
-      val = undefined;
+      baseObj = undefined;
       message(err);
       message("Field 'Obj' is not defined for library " + this.TypeName() + "!")
     }
