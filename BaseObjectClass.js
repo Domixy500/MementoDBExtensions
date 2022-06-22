@@ -19,8 +19,12 @@ function findInLib(libName, fieldName, fieldValue) {
 function Obj(e) {
   this.Current = e;
   this.Obj();
+  this.SnycProperties = [];
 }
 
+Obj.prototype.addSyncProperty = function(propertyName) {
+  this.SyncProperties.push(propertyName);
+};
 Obj.prototype.Id = function() {
   return this.Obj().field("Id");
 };
