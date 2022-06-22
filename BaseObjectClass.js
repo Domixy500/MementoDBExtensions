@@ -22,6 +22,18 @@ Obj.prototype.field = function(fieldName) {
 Obj.prototype.set = function(fieldName, newValue) {
   return this.Current.set(fieldName, newValue);
 };
+Obj.prototype.CreateInterfaces = function() {
+  var Interface;
+  var InterfacesToCreate = [];
+  try {
+    for(Interface of this.ObjType().field("CreateInterfaces")) {
+      message(Interface.field("Name"));
+    }
+  catch(err) {
+
+    }
+  }
+};
 Obj.prototype.Obj = function() {
   var val;
   try {
