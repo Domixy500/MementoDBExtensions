@@ -13,6 +13,12 @@ function Obj(e) {
 Obj.prototype.Id = function() {
   return this.Obj().field("Id");
 };
+Obj.prototype.field = function(fieldName) {
+  return this.Current.field(fieldName);
+};
+Obj.prototype.set = function(fieldName, newValue) {
+  return this.Current.set(fieldName, newValue);
+};
 Obj.prototype.Obj = function() {
   var val;
   try {
