@@ -5,13 +5,15 @@ function Create(typeName) {
   return obj;
 }
 function findInLib(libName, fieldName, fieldValue) {
+  var val;
   var allEntries = libByName(libName).entries();
   for(e of allEntries) {
     if(e.field(fieldName) == fieldValue) {
-      return e;
+      val = e;
       break;
     }
   }
+  return val;
 }
 
 function Obj(e) {
