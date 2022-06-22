@@ -38,12 +38,13 @@ Obj.prototype.isObjType = function() {
 };
 Obj.prototype.CreateInterfaces = function(ObjType) {
   var Interface;
+  var InterfaceName;
   var InterfacesToCreate = ObjType.field("CreateInterfaces");
   try {
     for(i in InterfacesToCreate){
-      Interface = InterfacesToCreate[i];
-      message(Interface);
-      message(Interface.field("Name"));
+      InterfaceName = InterfacesToCreate[i].fields("Name");
+      Interface = Create(InterfaceName);
+      this.Obj().link(InterfaceName, Interface);
     }
   }
   catch(err) {
