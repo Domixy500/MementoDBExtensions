@@ -19,11 +19,21 @@ function findInLib(libName, fieldName, fieldValue) {
 function Obj(e) {
   this.Current = e;
   this.Obj();
-  this.SnycProperties = [];
+  this.SyncProps = [];
 }
-
+Obj.prototype.SyncProperties = function() {
+  var prop;
+  var ObjType;
+  for(var i = 0; i < this.SyncProps.length; i++) {
+    prop = this.SyncProps[i];
+    for(var j = 0; j < this.isObjType().length; j++) {
+      ObjTypeName = this.isObjType()[j].field("Name");
+      this.Obj().field(ObjTypeName)[0].set(prop, this.field(prop));
+    }
+  }
+};
 Obj.prototype.addSyncProperty = function(propertyName) {
-  this.SyncProperties.push(propertyName);
+  this.SyncProps.push(propertyName);
 };
 Obj.prototype.Id = function() {
   return this.Obj().field("Id");
