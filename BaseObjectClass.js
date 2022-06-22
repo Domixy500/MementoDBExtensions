@@ -43,8 +43,11 @@ Obj.prototype.CreateInterfaces = function(ObjType) {
   try {
     for(i in InterfacesToCreate){
       InterfaceName = InterfacesToCreate[i].fields("Name");
+      message("e1" + InterfaceName);
       Interface = Create(InterfaceName);
+message("e2" + Interface);
       this.Obj().link(InterfaceName, Interface);
+message("e3" + InterfaceName);
     }
   }
   catch(err) {
