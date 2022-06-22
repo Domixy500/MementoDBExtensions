@@ -62,9 +62,12 @@ Obj.prototype.Obj = function() {
       message("Obj created with Id: " + this.Id());
       //link with ObjType if exists
       var ObjType = findInLib("ObjType", "Name", this.TypeName());
+message("e0 " + ObjType);
       try {
         this.Obj().link("isObjType", ObjType);
+message("e1 " + ObjType);
         this.CreateInterfaces(ObjType);
+message("e2 " + ObjType);
       }
       catch(err) {
         message(this.TypeName() + " is not registered!");
