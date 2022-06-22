@@ -13,6 +13,9 @@ function Obj(e) {
 Obj.prototype.Id = function() {
   return this.Obj().field("Id");
 };
+Obj.prototype.TypeName = function() {
+  return lib().title;
+};
 Obj.prototype.field = function(fieldName) {
   return this.Current.field(fieldName);
 };
@@ -33,13 +36,13 @@ Obj.prototype.Obj = function() {
     }
   }
   catch(err) {
-    if(lib().title == "Obj") {
+    if(this.TypeName() == "Obj") {
       val = this.Current;
     }
     else {
       val = undefined;
       message(err);
-      message("Field 'Obj' is not defined for library " + lib().title + "!")
+      message("Field 'Obj' is not defined for library " + this.TypeName() + "!")
     }
   }
   return val;
