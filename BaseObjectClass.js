@@ -36,11 +36,11 @@ Obj.prototype.set = function(fieldName, newValue) {
 Obj.prototype.isObjType = function() {
   return this.Obj().field("isObjType");
 };
-Obj.prototype.CreateInterfaces = function() {
+Obj.prototype.CreateInterfaces = function(ObjType) {
   var Interface;
   var InterfacesToCreate = [];
   try {
-    for(Interface of this.ObjType().field("CreateInterfaces")) {
+    for(Interface of ObjType.field("CreateInterfaces")) {
       message(Interface.field("Name"));
     }
   }
@@ -61,7 +61,7 @@ Obj.prototype.Obj = function() {
       var ObjType = findInLib("ObjType", "Name", this.TypeName());
       try {
         this.Obj().link("isObjType", ObjType);
-        this.CreateInterfaces();
+        this.CreateInterfaces(ObjType);
       }
       catch(err) {
         message(this.TypeName() + " is not registered!");
