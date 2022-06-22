@@ -45,7 +45,7 @@ Obj.prototype.CreateInterfaces = function(ObjType) {
     }
   }
   catch(err) {
-    message("test");
+    message(err);
   }
 };
 Obj.prototype.Obj = function() {
