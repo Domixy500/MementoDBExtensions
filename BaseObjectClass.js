@@ -30,6 +30,7 @@ Obj.prototype.SyncProperties = function() {
       ObjTypeName = this.isObjType()[j].field("Name");
       this.Obj().field(ObjTypeName)[0].set(prop, this.field(prop));
     }
+    this.Obj().set(prop, this.field(prop));
   }
 };
 Obj.prototype.addSyncProperty = function(propertyName) {
