@@ -19,54 +19,8 @@ function findInLib(libName, fieldName, fieldValue) {
 function Obj(e) {
   this.Current = e;
   this.Obj();
-  this.SyncProps = [];
 }
-Obj.prototype.SyncProperties = function() {
-  var prop;
-  var ObjType;
-  for(var i = 0; i < this.SyncProps.length; i++) {
-    prop = this.SyncProps[i];
-    for(var j = 0; j < this.isObjType().length; j++) {
-      ObjTypeName = this.isObjType()[j].field("Name");
-      this.Obj().field(ObjTypeName)[0].set(prop, this.field(prop));
-    }
-    this.Obj().set(prop, this.field(prop));
-  }
-};
-Obj.prototype.addSyncProperty = function(propertyName) {
-  this.SyncProps.push(propertyName);
-};
-Obj.prototype.Id = function() {
-  return this.Obj().field("Id");
-};
-Obj.prototype.TypeName = function() {
-  return lib().title;
-};
-Obj.prototype.field = function(fieldName) {
-  return this.Current.field(fieldName);
-};
-Obj.prototype.set = function(fieldName, newValue) {
-  return this.Current.set(fieldName, newValue);
-};
-Obj.prototype.isObjType = function() {
-  return this.Obj().field("isObjType");
-};
-Obj.prototype.CreateInterfaces = function(ObjType) {
-  var Interface;
-  var InterfaceName;
-  var InterfacesToCreate = ObjType.field("CreateInterfaces");
-  try {
-    for(i in InterfacesToCreate){
-      InterfaceName = InterfacesToCreate[i].field("Name");
-      Interface = Create(InterfaceName);
-      this.Obj().link(InterfaceName, Interface);
-      Interface.link("Obj", this.Obj());
-    }
-  }
-  catch(err) {
-    message(err);
-  }
-};
+
 Obj.prototype.Obj = function() {
   var baseObj;
   try {
@@ -103,12 +57,4 @@ Obj.prototype.Obj = function() {
     }
   }
   return baseObj;
-};
-Obj.prototype.UpdateDisplayName = function() {
-  var val = eval(DISPLAY_NAME);
-  this.Current.set("DisplayName", val);
-  return val;
-};
-Obj.prototype.Save = function() {
-  this.UpdateDisplayName();
-};
+}
