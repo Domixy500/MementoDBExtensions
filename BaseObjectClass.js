@@ -1,4 +1,4 @@
-function Create(typeName) {
+function CreateEntry(typeName) {
   var library = libByName(typeName);
   var obj = new Object();
   obj = library.create(obj);
@@ -24,6 +24,7 @@ function Obj(e) {
 Obj.prototype.Obj = function() {
   var baseObj = this.Current.field("Obj");
   if(baseObj.length == 0) {
-    
+    baseObj = Create("Obj");
   }
+  return baseObj;
 }
