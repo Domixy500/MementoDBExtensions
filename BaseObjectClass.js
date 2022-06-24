@@ -24,7 +24,7 @@ function Obj(e) {
 Obj.prototype.Obj = function() {
   var baseObj = this.Current.field("Obj");
   if(baseObj.length == 0) {
-    baseObj = Create("Obj");
+    baseObj = CreateEntry("Obj");
   }
   return baseObj;
 }
