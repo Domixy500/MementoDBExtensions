@@ -24,7 +24,17 @@ function Obj(e) {
 Obj.prototype.Obj = function() {
   var baseObj = this.Current.field("Obj");
   if(baseObj.length == 0) {
-    baseObj = CreateEntry("Obj");
+    if(this.LibName() == "Obj") {
+      baseObj = this.Current;
+    }
+    else {
+      baseObj = CreateEntry("Obj");
+    }
+    this.set("Obj", baseObj);
   }
   return baseObj;
 }
+
+Obj.prototype.LibName = function() {
+  return lib().title;
+};
