@@ -22,39 +22,8 @@ function Obj(e) {
 }
 
 Obj.prototype.Obj = function() {
-  var baseObj;
-  try {
-    baseObj = this.Current.field("Obj");
-    if(baseObj.length == 0) {
-      //create Obj
-      baseObj = Create("Obj");
-      this.Current.link("Obj", baseObj);
-      //link primary Interface
-      baseObj.link(this.TypeName(), this.Current);
-      message("Obj created with Id: " + this.Id());
-      //link with ObjType if exists
-      var ObjType = findInLib("ObjType", "Name", this.TypeName());
-      try {
-        this.Obj().link("isObjType", ObjType);
-        this.CreateInterfaces(ObjType);
-      }
-      catch(err) {
-        message(this.TypeName() + " is not registered!");
-      }
-    }
-    else {
-      baseObj = baseObj[0];
-    }
+  var baseObj = this.Current.field("Obj");
+  if(baseObj.length == 0) {
+    
   }
-  catch(err) {
-    if(this.TypeName() == "Obj") {
-      baseObj = this.Current;
-    }
-    else {
-      baseObj = undefined;
-      message(err);
-      message("Field 'Obj' is not defined for library " + this.TypeName() + "!")
-    }
-  }
-  return baseObj;
 }
