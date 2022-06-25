@@ -35,6 +35,10 @@ Obj.prototype.Obj = function() {
   return baseObj;
 }
 
+Obj.prototype.set = function(fieldName, fieldValue) {
+  return this.Current.set(fieldName, fieldValue);
+};
+
 Obj.prototype.LibName = function() {
   return lib().title;
 };
