@@ -48,14 +48,17 @@ function Obj(e) {
 Obj.prototype.Obj = function() {
   var baseObj = this.Current.field("Obj");
   if(baseObj.length == 0) {
-    if(this.LibName() == "Obj") {
+    if(this.TypeName() == "Obj") {
       baseObj = this.Current;
     }
     else {
       baseObj = CreateEntry("Obj");
-      baseObj.link(this.LibName(), this.Current);
+      baseObj.link(this.TypeName(), this.Current);
     }
     this.link("Obj", baseObj);
+  }
+  else {
+    baseObj = baseObj[0];
   }
   return baseObj;
 }
@@ -67,6 +70,13 @@ Obj.prototype.link = function(fieldName, fieldValue) {
   return this.Current.link(fieldName, fieldValue);
 };
 
-Obj.prototype.LibName = function() {
-  return lib().title;
+Obj.prototype.TypeName = function() {
+  var typeName = lib().title;
+  try {
+    typeName = this.Current.field("Obj")[0].field("BaseObjType")[0].field("Name");
+  }
+  catch(err) {
+    message("BaseObjType not found. LibTitle was used.");
+  }
+  return;
 };
