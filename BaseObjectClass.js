@@ -60,6 +60,7 @@ Obj.prototype.Obj = function() {
     else {
       baseObj = baseObj[0];
     }
+  }
   catch(err) {
     message("Context is not an entry or field 'Obj' is not defined in this library!");
   }
