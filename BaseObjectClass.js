@@ -4,6 +4,27 @@ function CreateEntry(typeName) {
   obj = library.create(obj);
   return obj;
 }
+function CreateObjType(typeName) {
+  var library = libByName("ObjType");
+  var objType = new Object();
+  objType = library.create(obj);
+  objType.set("Name", typeName);
+  var obj = CreateEntry("Obj");
+  obj.link("ObjType", objType);
+  objType.link("Obj", obj);
+  // link Obj as Type
+  var myType = findInLib("ObjType", "Name", "Obj");
+  if(myType != undefined) {
+    obj.link("isObjType", myType);
+  }
+  // link ObjType as Type
+  myType = findInLib("ObjType", "Name", "ObjType");
+  if(myType != undefined) {
+    obj.link("BaseObjType", myType);
+    obj.link("isObjType", myType);
+  }
+  return objType;
+}
 function findInLib(libName, fieldName, fieldValue) {
   var val;
   var allEntries = libByName(libName).entries();
@@ -29,7 +50,6 @@ Obj.prototype.Obj = function() {
     }
     else {
       baseObj = CreateEntry("Obj");
-message(this.LibName());
       baseObj.link(this.LibName(), this.Current);
     }
     this.link("Obj", baseObj);
