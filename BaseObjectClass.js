@@ -18,6 +18,7 @@ function CreateObjType(typeName) {
   var myType = findInLib("ObjType", "Name", "Obj");
   if(myType != undefined) {
     obj.link("isObjType", myType);
+    objType.link("InterfaceTypes", obj);
   }
   // link ObjType as Type
   myType = findInLib("ObjType", "Name", "ObjType");
