@@ -29,6 +29,7 @@ Obj.prototype.Obj = function() {
     }
     else {
       baseObj = CreateEntry("Obj");
+      baseObj.set(this.LibName(), this.Current);
     }
     this.set("Obj", baseObj);
   }
