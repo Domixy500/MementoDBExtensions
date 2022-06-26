@@ -76,5 +76,5 @@ Obj.prototype.TypeName = function() {
   catch(err) {
     message("BaseObjType not found. LibTitle was used.");
   }
-  return;
+  return typeName;
 };
