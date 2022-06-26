@@ -44,19 +44,24 @@ function Obj(e) {
 }
 
 Obj.prototype.Obj = function() {
-  var baseObj = this.Current.field("Obj");
-  if(baseObj.length == 0) {
-    if(this.TypeName() == "Obj") {
-      baseObj = this.Current;
+  var baseObj;
+  try {
+    baseObj = this.Current.field("Obj");
+    if(baseObj.length == 0) {
+      if(this.TypeName() == "Obj") {
+        baseObj = this.Current;
+      }
+      else {
+        baseObj = CreateEntry("Obj");
+        baseObj.link(this.TypeName(), this.Current);
+      }
+      this.link("Obj", baseObj);
     }
     else {
-      baseObj = CreateEntry("Obj");
-      baseObj.link(this.TypeName(), this.Current);
+      baseObj = baseObj[0];
     }
-    this.link("Obj", baseObj);
-  }
-  else {
-    baseObj = baseObj[0];
+  catch(err) {
+    message("Context is not an entry or field 'Obj' is not defined in this library!");
   }
   return baseObj;
 }
