@@ -48,12 +48,13 @@ Obj.prototype.Obj = function() {
   try {
     baseObj = this.Current.field("Obj");
     if(baseObj.length == 0) {
-      if(this.TypeName() == "Obj") {
+      var typeName = this.TypeName();
+      if(typeName == "Obj") {
         baseObj = this.Current;
       }
       else {
         baseObj = CreateEntry("Obj");
-        baseObj.link(this.TypeName(), this.Current);
+        baseObj.link(typeName, this.Current);
       }
       this.link("Obj", baseObj);
     }
@@ -63,6 +64,7 @@ Obj.prototype.Obj = function() {
   }
   catch(err) {
     message("Context is not an entry or field 'Obj' is not defined in this library!");
+    exit();
   }
   return baseObj;
 }
