@@ -29,15 +29,19 @@ Obj.prototype.Obj = function() {
     }
     else {
       baseObj = CreateEntry("Obj");
-      baseObj.set(this.LibName(), this.Current);
+message(this.LibName());
+      baseObj.link(this.LibName(), this.Current);
     }
-    this.set("Obj", baseObj);
+    this.link("Obj", baseObj);
   }
   return baseObj;
 }
 
 Obj.prototype.set = function(fieldName, fieldValue) {
   return this.Current.set(fieldName, fieldValue);
+};
+Obj.prototype.link = function(fieldName, fieldValue) {
+  return this.Current.link(fieldName, fieldValue);
 };
 
 Obj.prototype.LibName = function() {
