@@ -7,7 +7,7 @@ function CreateEntry(typeName) {
 function CreateObjType(typeName) {
   var library = libByName("ObjType");
   var objType = new Object();
-  objType = library.create(obj);
+  objType = library.create(objType);
   objType.set("Name", typeName);
   var obj = CreateEntry("Obj");
   obj.link("ObjType", objType);
