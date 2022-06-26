@@ -9,7 +9,9 @@ function CreateObjType(typeName) {
   var objType = new Object();
   objType = library.create(objType);
   objType.set("Name", typeName);
+  objType.set("DisplayName", typeName);
   var obj = CreateEntry("Obj");
+  obj.link("Obj", obj);
   obj.link("ObjType", objType);
   objType.link("Obj", obj);
   // link Obj as Type
