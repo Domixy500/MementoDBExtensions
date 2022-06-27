@@ -40,7 +40,24 @@ function findInLib(libName, fieldName, fieldValue) {
 
 function Obj(e) {
   this.Current = e;
-  this.Obj();
+  this.CheckStructure();
+}
+
+Obj.prototype.CheckStructure() {
+  var check = true;
+  try {
+    check
+  }
+  catch(err) {
+    check = false;
+    message(err);
+  }
+  return check;
+}
+
+Obj.prototype.CheckObj = function() {
+  var check = true;
+  return check;
 }
 
 Obj.prototype.Obj = function() {
@@ -51,7 +68,7 @@ Obj.prototype.Obj = function() {
       var typeName = this.TypeName();
       if(typeName == "Obj") {
         baseObj = this.Current;
-      }
+      }q
       else {
         baseObj = CreateEntry("Obj");
         baseObj.link(typeName, this.Current);
@@ -63,7 +80,7 @@ Obj.prototype.Obj = function() {
     }
   }
   catch(err) {
-    message("Context is not an entry or field 'Obj' is not defined in this library!");
+    message("Field 'Obj' is not defined in this library!");
     exit();
   }
   return baseObj;
