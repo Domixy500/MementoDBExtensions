@@ -46,17 +46,25 @@ function Obj(e) {
 Obj.prototype.CheckStructure() {
   var check = true;
   try {
-    check
+    check = this.CheckObj();
+message(check);
   }
   catch(err) {
     check = false;
-    message(err);
+    message(err.stack);
   }
   return check;
 }
 
 Obj.prototype.CheckObj = function() {
   var check = true;
+  try {
+    check = abc;
+  }
+  catch(err) {
+    check = false;
+    message(err.stack);
+  }
   return check;
 }
 
