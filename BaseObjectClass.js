@@ -43,6 +43,9 @@ function Create(typeName) {
   obj.Create(typeName);
   return obj;
 }
+function CheckObjType(typeName) {
+  message(libByName("test"));
+}
 
 function Obj(e) {
   this.Current = e;
@@ -53,6 +56,8 @@ Obj.prototype.Create = function(typeName) {
   var iType;
   var iName;
   var interface;
+//Run checks
+  CheckObjType(typeName);
 //Create Obj
   if(typeName == "Obj") {
     obj = this.Current;
