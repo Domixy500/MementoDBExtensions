@@ -44,7 +44,10 @@ function Create(typeName) {
   return obj;
 }
 function CheckObjType(typeName) {
-  message(libByName("test"));
+  if(libByName("test") == null) {
+    message("Library '" + typeName + "'is not defined!");
+    exit();
+  }
 }
 
 function Obj(e) {
