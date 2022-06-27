@@ -43,7 +43,7 @@ function Obj(e) {
   this.CheckStructure();
 };
 
-Obj.prototype.CheckStructure() {
+Obj.prototype.CheckStructure = function() {
   var check = true;
   try {
     check = this.CheckObj();
@@ -89,7 +89,6 @@ Obj.prototype.Obj = function() {
   }
   catch(err) {
     message("Field 'Obj' is not defined in this library!");
-    exit();
   }
   return baseObj;
 };
