@@ -37,76 +37,48 @@ function findInLib(libName, fieldName, fieldValue) {
   }
   return val;
 }
+function Create(typeName) {
+  var obj = CreateEntry(typeName);
+  obj = new Obj(obj);
+  obj.Create(typeName);
+  return obj;
+}
 
 function Obj(e) {
   this.Current = e;
-  this.CheckStructure();
 };
 
-Obj.prototype.CheckStructure = function() {
-  var check = true;
-  try {
-    check = this.CheckObj();
-message(check);
+Obj.prototype.Create = function(typeName) {
+  var obj;
+  var iType;
+  var iName;
+  var interface;
+//Create Obj
+  if(typeName == "Obj") {
+    obj = this.Current;
   }
-  catch(err) {
-    check = false;
-    message(err.stack);
+  else {
+    obj = CreateEntry("Obj");
   }
-  return check;
-};
-
-Obj.prototype.CheckObj = function() {
-  var check = true;
-  try {
-    check = abc;
-  }
-  catch(err) {
-    check = false;
-    message(err.stack);
-  }
-  return check;
-};
-
-Obj.prototype.Obj = function() {
-  var baseObj;
-  try {
-    baseObj = this.Current.field("Obj");
-    if(baseObj.length == 0) {
-      var typeName = this.TypeName();
-      if(typeName == "Obj") {
-        baseObj = this.Current;
-      }
-      else {
-        baseObj = CreateEntry("Obj");
-        baseObj.link(typeName, this.Current);
-      }
-      this.link("Obj", baseObj);
+  var objType = findInLib("ObjType", "Name", typeName);
+  var interfaceTypes = objType.field("InterfaceTypes");
+  for(var i = 0; i < interfaceTypes.length; i++) {
+    iType = interfaceTypes[i];
+    iName = iType.field("Name");
+    obj.link("isObjType", iType);
+    if(iName == typeName) {
+      obj.link("BaseObjType", iType);
+      interface = this.Current;
+    }
+    else if(iName == "Obj") {
+      interface = obj;
     }
     else {
-      baseObj = baseObj[0];
+      interface = CreateEntry(iName);
     }
+    if(iName != "Obj") {
+      interface.link("Obj", obj);
+    }
+    obj.link(iName, interface);
   }
-  catch(err) {
-    message("Field 'Obj' is not defined in this library!");
-  }
-  return baseObj;
-};
-
-Obj.prototype.set = function(fieldName, fieldValue) {
-  return this.Current.set(fieldName, fieldValue);
-};
-Obj.prototype.link = function(fieldName, fieldValue) {
-  return this.Current.link(fieldName, fieldValue);
-};
-
-Obj.prototype.TypeName = function() {
-  var typeName = lib().title;
-  try {
-    typeName = this.Current.field("Obj")[0].field("BaseObjType")[0].field("Name");
-  }
-  catch(err) {
-    message("BaseObjType not found. LibTitle was used.");
-  }
-  return typeName;
 };
