@@ -41,7 +41,7 @@ function findInLib(libName, fieldName, fieldValue) {
 function Obj(e) {
   this.Current = e;
   this.CheckStructure();
-}
+};
 
 Obj.prototype.CheckStructure() {
   var check = true;
@@ -54,7 +54,7 @@ message(check);
     message(err.stack);
   }
   return check;
-}
+};
 
 Obj.prototype.CheckObj = function() {
   var check = true;
@@ -66,7 +66,7 @@ Obj.prototype.CheckObj = function() {
     message(err.stack);
   }
   return check;
-}
+};
 
 Obj.prototype.Obj = function() {
   var baseObj;
@@ -76,7 +76,7 @@ Obj.prototype.Obj = function() {
       var typeName = this.TypeName();
       if(typeName == "Obj") {
         baseObj = this.Current;
-      }q
+      }
       else {
         baseObj = CreateEntry("Obj");
         baseObj.link(typeName, this.Current);
@@ -92,7 +92,7 @@ Obj.prototype.Obj = function() {
     exit();
   }
   return baseObj;
-}
+};
 
 Obj.prototype.set = function(fieldName, fieldValue) {
   return this.Current.set(fieldName, fieldValue);
