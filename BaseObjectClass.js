@@ -44,8 +44,24 @@ function Create(typeName) {
   return obj;
 }
 function CheckObjType(typeName) {
-  if(libByName("test") == null) {
-    message("Library '" + typeName + "'is not defined!");
+  if(libByName(typeName) == null) {
+    message("Library '" + typeName + "' is  not defined!");
+    exit();
+  }
+  var objType = findInLib("ObjType", "Name", typeName);
+  if(objType == null) {
+    message("ObjType '" + typeName + "' is  not registered!");
+    exit();
+  }
+  if(objType.field("InterfaceTypes").length == 0) {
+    message("ObjType '" + typeName + "' has no InterfaceTypes!");
+    exit();
+  }
+  try {
+    var test = libByName("Obj").entries()[0].field(typeName);
+  }
+  catch(err) {
+    message("Interface '" + typeName + "' is not defined for Obj!");
     exit();
   }
 }
@@ -54,12 +70,60 @@ function Obj(e) {
   this.Current = e;
 };
 
+Obj.prototype.SyncProperties = function() {
+  message("sync Todo");
+};
+
+Obj.prototype.DisplayName = function() {
+  var baseType = this.Obj().field("BaseObjType")[0];
+  var displayNameStructure = baseType.field("DisplayNameStructure") + " + this.field('Id')";
+message(displayNameStructure
+);
+  o.set("DisplayName", eval(displayNameStructure));
+};
+
+Obj.prototype.Save = function() {
+  this.DisplayName();
+  this.SyncProperties();
+};
+
+Obj.prototype.Obj = function() {
+  return this.field("Obj")[0];
+};
+
+Obj.prototype.Base = function() {
+  return this.Obj().field(this.BaseTypeName)[0];
+};
+
+Obj.prototype.BaseTypeName = function() {
+  return this.BaseType().field("Name");
+};
+
+Obj.prototype.BaseType = function() {
+  return this.Obj().field("BaseObjType")[0];
+};
+
+Obj.prototype.field = function(fieldName) {
+  var fieldValue;
+  try {
+    fieldValue = this.Current.field(fieldName);
+  }
+  catch(err) {
+    fieldValue = this.Base.field(fieldName);
+  }
+  return fieldValue;
+};
+
+Obj.prototype.set = function(fieldName, fieldValue) {
+  this.Current.set(fieldName, fieldValue);
+};
+
 Obj.prototype.Create = function(typeName) {
   var obj;
   var iType;
   var iName;
   var interface;
-//Run checks
+//Run checks => exits if not succesfull
   CheckObjType(typeName);
 //Create Obj
   if(typeName == "Obj") {
