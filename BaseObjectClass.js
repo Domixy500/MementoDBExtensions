@@ -71,14 +71,25 @@ function Obj(e) {
 };
 
 Obj.prototype.SyncProperties = function() {
-  message("sync Todo");
+  var propName;
+  var propValue;
+  var iFace;
+  var propertiesToSync = this.BaseType().field("PropertiesToSync");
+  for(var i = 0; i < propertiesToSync.length; i++) {
+    propName = propertiesToSync[i];
+    propValue = this.field(propName);
+    for(var j = 0; j < this.Types().length; j++) {
+      iFace = this.Obj().field(this.Types()[j].field("Name"))[0];
+      if(iFace.id != this.Current.id) {
+        iFace.set(propName, propValue);
+      }
+    }
+  }
 };
 
 Obj.prototype.DisplayName = function() {
   var baseType = this.Obj().field("BaseObjType")[0];
-  var displayNameStructure = baseType.field("DisplayNameStructure") + " + this.field('Id')";
-message(displayNameStructure
-);
+  var displayNameStructure = baseType.field("DisplayNameStructure") + " + ' [' + this.Id() + ']'";
   o.set("DisplayName", eval(displayNameStructure));
 };
 
@@ -91,8 +102,12 @@ Obj.prototype.Obj = function() {
   return this.field("Obj")[0];
 };
 
+Obj.prototype.Id = function() {
+  return this.Obj().field("Id");
+};
+
 Obj.prototype.Base = function() {
-  return this.Obj().field(this.BaseTypeName)[0];
+  return this.Obj().field(this.BaseTypeName())[0];
 };
 
 Obj.prototype.BaseTypeName = function() {
@@ -103,13 +118,17 @@ Obj.prototype.BaseType = function() {
   return this.Obj().field("BaseObjType")[0];
 };
 
+Obj.prototype.Types = function() {
+  return this.Obj().field("isObjType");
+};
+
 Obj.prototype.field = function(fieldName) {
   var fieldValue;
   try {
     fieldValue = this.Current.field(fieldName);
   }
   catch(err) {
-    fieldValue = this.Base.field(fieldName);
+    fieldValue = this.Base().field(fieldName);
   }
   return fieldValue;
 };
