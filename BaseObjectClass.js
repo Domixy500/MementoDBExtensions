@@ -172,4 +172,5 @@ Obj.prototype.Create = function(typeName) {
     }
     obj.link(iName, interface);
   }
+  this.Save();
 };
