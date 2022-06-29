@@ -90,7 +90,7 @@ Obj.prototype.SyncProperties = function() {
 Obj.prototype.DisplayName = function() {
   var baseType = this.Obj().field("BaseObjType")[0];
   var displayNameStructure = baseType.field("DisplayNameStructure") + " + ' [' + this.Id() + ']'";
-  o.set("DisplayName", eval(displayNameStructure));
+  this.set("DisplayName", eval(displayNameStructure));
 };
 
 Obj.prototype.Save = function() {
