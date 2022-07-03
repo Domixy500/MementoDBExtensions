@@ -71,21 +71,25 @@ function Obj(e) {
 };
 
 Obj.prototype.SyncProperties = function() {
-  var propName;
-  var propValue;
-  var iFace;
-  var propertiesToSync = this.BaseType().field("PropertiesToSync");
-  for(var i = 0; i < propertiesToSync.length; i++) {
-    propName = propertiesToSync[i];
-    propValue = this.field(propName);
-    for(var j = 0; j < this.Types().length; j++) {
-      iFace = this.Obj().field(this.Types()[j].field("Name"))[0];
-      if(iFace.id != this.Current.id) {
-		message(iFace.library().title);
-        iFace.set(propName, propValue);
-      }
-    }
-  }
+	var propName;
+	var propValue;
+	var iFace;
+	var propertiesToSync = this.BaseType().field("PropertiesToSync");
+	for(var i = 0; i < propertiesToSync.length; i++) {
+		propName = propertiesToSync[i];
+		propValue = this.field(propName);
+		for(var j = 0; j < this.Types().length; j++) {
+			iFace = this.Obj().field(this.Types()[j].field("Name"))[0];
+			if(iFace.id != this.Current.id) {
+				try {
+					iFace.set(propName, propValue);
+				}
+				catch(err) {
+					message("Property '" + propName + "' is not defined for interface '" + this.Types()[j].field("Name") + "'!");
+				}
+			}
+		}
+	}
 };
 
 Obj.prototype.DisplayName = function() {
