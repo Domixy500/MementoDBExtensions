@@ -1,1 +1,788 @@
-{"templates":[{"u":"EdPD+pYnph>Q2JlNQxp<","tt":"Obj","type":"ft_lib_entry","usg":"NOT_USAGE","num":0,"order":0,"lib":"#8w<F6]bEVL9]k-6J6Gj","r":false,"stats":"","hint":"","cnt":[{"s":"_index_{\"i\":1,\"t\":\"Obj\"}","i":0,"o":"EdPD+pYnph>Q2JlNQxp<","t":"EdPD+pYnph>Q2JlNQxp<"}],"depend":"","disp_title":true,"entry_color":false,"show_in_table":true,"column_width":100,"week_event":0,"autofill":"","card_align":0,"json_options":"{\"attrJsonTemplates\":[],\"relationType\":2,\"fieldColorTarget\":0,\"textDrawable\":false}","unique":false,"readonly":false},{"u":"<spEG>UwVncL!3UA106N","tt":"DisplayName","type":"ft_string","usg":"USAGE_IN_TITLE","num":1,"order":1,"lib":"#8w<F6]bEVL9]k-6J6Gj","r":false,"stats":"","hint":"","cnt":[{"i":2,"o":"<spEG>UwVncL!3UA106N","t":"<spEG>UwVncL!3UA106N"}],"depend":"","disp_title":true,"entry_color":false,"show_in_table":true,"column_width":100,"week_event":0,"autofill":"","card_align":0,"json_options":"{\"fieldColorTarget\":0,\"textDrawable\":false}","unique":false,"readonly":true}],"version":23,"entry_pages":"{\"pages\":[{\"d\":true,\"f\":[0,1],\"hide_aggr\":[],\"inv\":[],\"ml\":[],\"t\":\"Template\"},{\"d\":false,\"f\":[],\"hide_aggr\":[],\"inv\":[],\"ml\":[],\"t\":\"Hidden\"}]}","title":"TemplateType","color":-2236963,"icon":"flat:folder_blue.png","unique_names":false,"triggers":"[{\"enabled\":true,\"event\":\"MODIFY_ENTRY\",\"jsLibs\":[\"https:\/\/raw.githubusercontent.com\/Domixy500\/MementoDBExtensions\/main\/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterSave\",\"script\":\"var o \\u003d new Obj(entry());\\no.Save();\"},{\"enabled\":true,\"event\":\"CREATE_ENTRY\",\"jsLibs\":[\"https:\/\/raw.githubusercontent.com\/Domixy500\/MementoDBExtensions\/main\/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterCreate\",\"script\":\"var o \\u003d new Obj(entry());\\no.Create(lib().title);\"}]","scripts_permissions":"{\"fileRead\":true,\"fileWrite\":true,\"libraries\":true,\"librariesIds\":[],\"librariesTitles\":{},\"network\":false}","related_libraries":[{"title":"Obj","id":"CMQfX1JCRFnQk(mVG6B*","color":-2236963,"icon":"flat:folder_blue.png","unique_names":false,"triggers":"[{\"attrJson\":\"{\\\"arguementsTemplates\\\":[]}\",\"enabled\":true,\"event\":\"ACTION\",\"icon\":\"nova:download-computer.png\",\"jsLibs\":[\"https:\/\/raw.githubusercontent.com\/Domixy500\/MementoDBExtensions\/main\/BaseObjectClass.js\"],\"moment\":\"LIBRARY_CONTEXT\",\"name\":\"InitializeDB\",\"script\":\"if(lib().entries().length !\\u003d 0) {\\n  message(\\\"This is not an empty library!\\\")\\n  exit();\\n}\\nvar obj \\u003d CreateObjType(\\\"Obj\\\");\\nvar objType \\u003d CreateObjType(\\\"ObjType\\\");\\nobj.field(\\\"Obj\\\")[0].link(\\\"BaseObjType\\\", objType);\\nobj.field(\\\"Obj\\\")[0].link(\\\"isObjType\\\", objType);\\nobjType.link(\\\"InterfaceTypes\\\", objType);\\n\\n\/\/ Settings\\nobj.set(\\\"DisplayNameStructure\\\", \\\"this.field(\\u0027Id\\u0027)\\\");\\nobjType.set(\\\"DisplayNameStructure\\\", \\\"this.field(\\u0027Name\\u0027)\\\");\\n\\n\/\/ Update\\nobj \\u003d new Obj(obj);\\nobjType \\u003d new Obj(objType);\\nobj.Save();\\nobjType.Save();\"},{\"enabled\":true,\"event\":\"MODIFY_ENTRY\",\"jsLibs\":[\"https:\/\/raw.githubusercontent.com\/Domixy500\/MementoDBExtensions\/main\/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterSave\",\"script\":\"var o \\u003d new Obj(entry());\\no.Save();\"},{\"enabled\":true,\"event\":\"CREATE_ENTRY\",\"jsLibs\":[\"https:\/\/raw.githubusercontent.com\/Domixy500\/MementoDBExtensions\/main\/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterCreate\",\"script\":\"var o \\u003d new Obj(entry());\\no.Create(lib().title);\"}]","entry_pages":"{\"pages\":[{\"d\":true,\"f\":[0,1,2,3,4,5,6,7],\"hide_aggr\":[],\"inv\":[],\"ml\":[],\"t\":\"Obj\"},{\"d\":false,\"f\":[],\"hide_aggr\":[],\"inv\":[],\"ml\":[\"CMQfX1JCRFnQk(mVG6B*\",\"LTOO+[Sj*WX@OM1JS#K;\",\"#8w\\u003cF6]bEVL9]k-6J6Gj\",\"YeNzwTlgh1f#Ie2jBKTP\"],\"t\":\"Hidden\"}]}","templates":[{"u":"J1N)WfMFPQAZ3l;>ABRl","tt":"Id","type":"ft_int","usg":"NOT_USAGE","num":0,"order":0,"lib":"CMQfX1JCRFnQk(mVG6B*","r":false,"stats":"","hint":"","cnt":[{"s":"auto","i":0,"o":"J1N)WfMFPQAZ3l;>ABRl","t":"J1N)WfMFPQAZ3l;>ABRl"}],"depend":"","disp_title":true,"entry_color":false,"show_in_table":true,"column_width":100,"week_event":0,"autofill":"","card_align":0,"json_options":"{\"displayConvertUnitButton\":false,\"groupSeparator\":false,\"incDelta\":0.0,\"showCalc\":false,\"fieldColorTarget\":0,\"textDrawable\":false}","unique":true,"readonly":true},{"u":"TYMhdGPNECmChGik%5r:","tt":"DisplayName","type":"ft_string","usg":"USAGE_IN_TITLE","num":1,"order":1,"lib":"CMQfX1JCRFnQk(mVG6B*","r":false,"stats":"","hint":"","cnt":[{"i":2,"o":"TYMhdGPNECmChGik%5r:","t":"TYMhdGPNECmChGik%5r:"}],"depend":"","disp_title":true,"entry_color":false,"show_in_table":true,"column_width":100,"week_event":0,"autofill":"","card_align":0,"json_options":"{\"fieldColorTarget\":0,\"fieldDelimiter\":\"\",\"textDrawable\":false}","unique":false,"readonly":true},{"u":"*tb5eC[SAK2KNs2Szc]Q","tt":"BaseObjType","type":"ft_lib_entry","usg":"NOT_USAGE","num":5,"order":2,"lib":"CMQfX1JCRFnQk(mVG6B*","r":false,"stats":"","hint":"","cnt":[{"s":"_index_{\"i\":2,\"t\":\"ObjType\"}","i":0,"o":"*tb5eC[SAK2KNs2Szc]Q","t":"*tb5eC[SAK2KNs2Szc]Q"}],"depend":"","disp_title":true,"entry_color":false,"show_in_table":true,"column_width":100,"week_event":0,"autofill":"","card_align":0,"json_options":"{\"attrJsonTemplates\":[],\"relationType\":1,\"fieldColorTarget\":0,\"textDrawable\":false}","unique":false,"readonly":false},{"u":"T1vZIbh(5Il%VOIj*VcB","tt":"isObjType","type":"ft_lib_entry","usg":"NOT_USAGE","num":6,"order":3,"lib":"CMQfX1JCRFnQk(mVG6B*","r":false,"stats":"","hint":"","cnt":[{"s":"_index_{\"i\":2,\"t\":\"ObjType\"}","i":0,"o":"T1vZIbh(5Il%VOIj*VcB","t":"T1vZIbh(5Il%VOIj*VcB"}],"depend":"","disp_title":true,"entry_color":false,"show_in_table":true,"column_width":100,"week_event":0,"autofill":"","card_align":0,"json_options":"{\"attrJsonTemplates\":[],\"relationType\":0,\"fieldColorTarget\":0,\"textDrawable\":false}","unique":false,"readonly":false},{"u":"(&Fra(m]:Z&Uqe+@v1hn","tt":"Interfaces","type":"ft_subheader","usg":"NOT_USAGE","num":2,"order":4,"lib":"CMQfX1JCRFnQk(mVG6B*","r":false,"stats":"","hint":"","cnt":[{"i":0,"o":"(&Fra(m]:Z&Uqe+@v1hn","t":"(&Fra(m]:Z&Uqe+@v1hn"}],"depend":"","disp_title":true,"entry_color":false,"show_in_table":true,"column_width":100,"week_event":0,"autofill":"","card_align":0,"json_options":"{\"fieldColorTarget\":0,\"font\":{\"color\":-13783129,\"defaultColor\":false,\"family\":\"sans-serif\",\"size\":18,\"style\":1},\"textDrawable\":false}","unique":false,"readonly":false},{"u":"]jx%rd#Dw(WLPOB;o9fd","tt":"Obj","type":"ft_lib_entry","usg":"NOT_USAGE","num":3,"order":5,"lib":"CMQfX1JCRFnQk(mVG6B*","r":false,"stats":"","hint":"","cnt":[{"s":"_index_{\"i\":1,\"t\":\"Obj\"}","i":0,"o":"]jx%rd#Dw(WLPOB;o9fd","t":"]jx%rd#Dw(WLPOB;o9fd"}],"depend":"","disp_title":true,"entry_color":false,"show_in_table":true,"column_width":100,"week_event":0,"autofill":"","card_align":0,"json_options":"{\"attrJsonTemplates\":[],\"relationType\":2,\"fieldColorTarget\":0,\"textDrawable\":false}","unique":false,"readonly":true},{"u":"-FzhfHdzfesgwE(2N(93","tt":"ObjType","type":"ft_lib_entry","usg":"NOT_USAGE","num":4,"order":6,"lib":"CMQfX1JCRFnQk(mVG6B*","r":false,"stats":"","hint":"","cnt":[{"s":"_index_{\"i\":2,\"t\":\"ObjType\"}","i":0,"o":"-FzhfHdzfesgwE(2N(93","t":"-FzhfHdzfesgwE(2N(93"}],"depend":"","disp_title":true,"entry_color":false,"show_in_table":true,"column_width":100,"week_event":0,"autofill":"","card_align":0,"json_options":"{\"attrJsonTemplates\":[],\"relationType\":1,\"fieldColorTarget\":0,\"textDrawable\":false}","unique":false,"readonly":true},{"u":"L83DgdVMGL+p1h7:t&m#","tt":"ActivityType","type":"ft_lib_entry","usg":"NOT_USAGE","num":7,"order":7,"lib":"CMQfX1JCRFnQk(mVG6B*","r":false,"stats":"","hint":"","cnt":[{"s":"YeNzwTlgh1f#Ie2jBKTP","i":0,"o":"L83DgdVMGL+p1h7:t&m#","t":"L83DgdVMGL+p1h7:t&m#"}],"depend":"","disp_title":true,"entry_color":false,"show_in_table":true,"column_width":100,"week_event":0,"autofill":"","card_align":0,"json_options":"{\"attrJsonTemplates\":[],\"relationType\":2,\"fieldColorTarget\":0,\"textDrawable\":false}","unique":false,"readonly":true}],"scripts_permissions":"{\"fileRead\":true,\"fileWrite\":true,\"libraries\":true,\"librariesIds\":[],\"librariesTitles\":{},\"network\":false}"},{"title":"ObjType","id":"LTOO+[Sj*WX@OM1JS#K;","color":-2236963,"icon":"flat:folder_blue.png","unique_names":false,"triggers":"[{\"enabled\":true,\"event\":\"MODIFY_ENTRY\",\"jsLibs\":[\"https:\/\/raw.githubusercontent.com\/Domixy500\/MementoDBExtensions\/main\/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterSave\",\"script\":\"var o \\u003d new Obj(entry());\\no.Save();\"},{\"enabled\":true,\"event\":\"CREATE_ENTRY\",\"jsLibs\":[\"https:\/\/raw.githubusercontent.com\/Domixy500\/MementoDBExtensions\/main\/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterCreate\",\"script\":\"var o \\u003d new Obj(entry());\\no.Create(lib().title);\"},{\"enabled\":true,\"event\":\"LINK_ENTRY\",\"jsLibs\":[],\"moment\":\"BEFORE_SAVE\",\"name\":\"linkedToObj\",\"script\":\"var baseName;\\nvar objTypeName;\\n\\nif(masterLib().title \\u003d\\u003d \\\"Obj\\\") {\\n  baseName \\u003d masterEntry().field(\\\"BaseObjType\\\")[0].field(\\\"Name\\\");\\n  objTypeName \\u003d entry().field(\\\"Name\\\");\\n  if(baseName !\\u003d objTypeName) {\\n    var typeLib \\u003d libByName(objTypeName);\\n    var iFace \\u003d new Object();\\n    iFace \\u003d typeLib.create(iFace);\\n    masterEntry().link(objTypeName, iFace);\\n    iFace.link(\\\"Obj\\\", masterEntry());\\n  }\\n}\"}]","entry_pages":"{\"pages\":[{\"d\":true,\"f\":[0,1,2,3,4,5],\"hide_aggr\":[],\"inv\":[],\"ml\":[],\"t\":\"ObjType\"},{\"d\":false,\"f\":[],\"hide_aggr\":[],\"inv\":[],\"ml\":[\"CMQfX1JCRFnQk(mVG6B*\",\"LTOO+[Sj*WX@OM1JS#K;\"],\"t\":\"Hidden\"}]}","templates":[{"u":"VGye*HE3a!o5LJ2tTMXm","tt":"Obj","type":"ft_lib_entry","usg":"NOT_USAGE","num":0,"order":0,"lib":"LTOO+[Sj*WX@OM1JS#K;","r":false,"stats":"","hint":"","cnt":[{"s":"_index_{\"i\":1,\"t\":\"Obj\"}","i":0,"o":"VGye*HE3a!o5LJ2tTMXm","t":"VGye*HE3a!o5LJ2tTMXm"}],"depend":"","disp_title":true,"entry_color":false,"show_in_table":true,"column_width":100,"week_event":0,"autofill":"","card_align":0,"json_options":"{\"attrJsonTemplates\":[],\"relationType\":2,\"fieldColorTarget\":0,\"textDrawable\":false}","unique":false,"readonly":false},{"u":"O[OzyADnbHQZ*ZyJk0ZF","tt":"DisplayName","type":"ft_string","usg":"USAGE_IN_TITLE","num":1,"order":1,"lib":"LTOO+[Sj*WX@OM1JS#K;","r":false,"stats":"","hint":"","cnt":[{"i":2,"o":"O[OzyADnbHQZ*ZyJk0ZF","t":"O[OzyADnbHQZ*ZyJk0ZF"}],"depend":"","disp_title":true,"entry_color":false,"show_in_table":true,"column_width":100,"week_event":0,"autofill":"","card_align":0,"json_options":"{\"fieldColorTarget\":0,\"textDrawable\":false}","unique":false,"readonly":true},{"u":"(!ia>XsipM%:m-*#(Mfq","tt":"Name","type":"ft_string","usg":"NOT_USAGE","num":2,"order":2,"lib":"LTOO+[Sj*WX@OM1JS#K;","r":false,"stats":"","hint":"","cnt":[{"i":2,"o":"(!ia>XsipM%:m-*#(Mfq","t":"(!ia>XsipM%:m-*#(Mfq"}],"depend":"","disp_title":true,"entry_color":false,"show_in_table":true,"column_width":100,"week_event":0,"autofill":"","card_align":0,"json_options":"{\"fieldColorTarget\":0,\"textDrawable\":false}","unique":false,"readonly":false},{"u":">zxV>0udOcsSI-eVQ!zt","tt":"DisplayNameStructure","type":"ft_string","usg":"NOT_USAGE","num":3,"order":3,"lib":"LTOO+[Sj*WX@OM1JS#K;","r":false,"stats":"","hint":"","cnt":[{"s":"this.field('Id')","i":2,"o":">zxV>0udOcsSI-eVQ!zt","t":">zxV>0udOcsSI-eVQ!zt"}],"depend":"","disp_title":true,"entry_color":false,"show_in_table":true,"column_width":100,"week_event":0,"autofill":"","card_align":0,"json_options":"{\"fieldColorTarget\":0,\"textDrawable\":false}","unique":false,"readonly":false},{"u":"Epz[[YCi1AvBf6tld4Zd","tt":"PropertiesToSync","type":"ft_multy_str_list","usg":"NOT_USAGE","num":4,"order":4,"lib":"LTOO+[Sj*WX@OM1JS#K;","r":false,"stats":"","hint":"","cnt":[{"s":"{\"sl\":[{\"t\":\"Id\",\"c\":2,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"DisplayName\",\"c\":1,\"i\":\"\",\"def\":true,\"c_text\":false}],\"sort\":false}","i":8,"o":"Epz[[YCi1AvBf6tld4Zd","t":"Epz[[YCi1AvBf6tld4Zd"}],"depend":"","disp_title":true,"entry_color":false,"show_in_table":true,"column_width":100,"week_event":0,"autofill":"","card_align":0,"json_options":"{\"delimiter\":\", \",\"fieldColorTarget\":0,\"textDrawable\":false}","unique":false,"readonly":false},{"u":"E6hO@b>+lT3Y[[Q#@Xmu","tt":"InterfaceTypes","type":"ft_lib_entry","usg":"NOT_USAGE","num":5,"order":5,"lib":"LTOO+[Sj*WX@OM1JS#K;","r":false,"stats":"","hint":"","cnt":[{"s":"_index_{\"i\":2,\"t\":\"ObjType\"}","i":0,"o":"E6hO@b>+lT3Y[[Q#@Xmu","t":"E6hO@b>+lT3Y[[Q#@Xmu"}],"depend":"","disp_title":true,"entry_color":false,"show_in_table":true,"column_width":100,"week_event":0,"autofill":"","card_align":0,"json_options":"{\"attrJsonTemplates\":[],\"relationType\":0,\"fieldColorTarget\":0,\"textDrawable\":false}","unique":false,"readonly":false}],"scripts_permissions":"{\"fileRead\":true,\"fileWrite\":true,\"libraries\":true,\"librariesIds\":[],\"librariesTitles\":{},\"network\":false}"}]}
+{
+  "templates": [
+    {
+      "u": "-sYKT%UM]-NbL55OD*ev",
+      "tt": "Obj",
+      "type": "ft_lib_entry",
+      "usg": "NOT_USAGE",
+      "num": 0,
+      "order": 0,
+      "lib": "R!bbyE*nkGAZSttm3Leg",
+      "r": false,
+      "stats": "",
+      "hint": "",
+      "cnt": [
+        {
+          "s": "_index_{\"i\":3,\"t\":\"Obj\"}",
+          "i": 0,
+          "o": "-sYKT%UM]-NbL55OD*ev",
+          "t": "-sYKT%UM]-NbL55OD*ev"
+        }
+      ],
+      "depend": "",
+      "disp_title": true,
+      "entry_color": false,
+      "show_in_table": true,
+      "column_width": 100,
+      "week_event": 0,
+      "autofill": "",
+      "card_align": 0,
+      "json_options": "{\"attrJsonTemplates\":[],\"relationType\":2,\"fieldColorTarget\":0,\"textDrawable\":false}",
+      "unique": false,
+      "readonly": false
+    },
+    {
+      "u": "+mjSU)5KdlcK:;hY&OdZ",
+      "tt": "DisplayName",
+      "type": "ft_string",
+      "usg": "USAGE_IN_TITLE",
+      "num": 1,
+      "order": 1,
+      "lib": "R!bbyE*nkGAZSttm3Leg",
+      "r": false,
+      "stats": "",
+      "hint": "",
+      "cnt": [
+        {
+          "s": "",
+          "i": 2,
+          "o": "+mjSU)5KdlcK:;hY&OdZ",
+          "t": "+mjSU)5KdlcK:;hY&OdZ"
+        }
+      ],
+      "depend": "",
+      "disp_title": true,
+      "entry_color": false,
+      "show_in_table": true,
+      "column_width": 100,
+      "week_event": 0,
+      "autofill": "",
+      "card_align": 0,
+      "json_options": "{\"fieldColorTarget\":0,\"textDrawable\":false}",
+      "unique": false,
+      "readonly": true
+    }
+  ],
+  "version": 23,
+  "entry_pages": "{\"pages\":[{\"d\":true,\"f\":[0,1],\"hide_aggr\":[],\"inv\":[],\"ml\":[],\"t\":\"Template\"},{\"d\":false,\"f\":[],\"hide_aggr\":[],\"inv\":[],\"ml\":[],\"t\":\"Hidden\"}]}",
+  "title": "TemplateType",
+  "color": -2236963,
+  "icon": "flat:folder_blue.png",
+  "unique_names": false,
+  "triggers": "[{\"enabled\":true,\"event\":\"MODIFY_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterSave\",\"script\":\"var o \\u003d new Obj(entry());\\no.Save();\"},{\"enabled\":true,\"event\":\"CREATE_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterCreate\",\"script\":\"var o \\u003d new Obj(entry());\\no.Create(lib().title);\"}]",
+  "related_libraries": [
+    {
+      "title": "Person",
+      "id": "ZsKuiYBOObGLltGQXLp(",
+      "color": -2236963,
+      "icon": "flat:user.png",
+      "unique_names": true,
+      "triggers": "[{\"enabled\":true,\"event\":\"MODIFY_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterSave\",\"script\":\"var o \\u003d new Obj(entry());\\no.Save();\"},{\"enabled\":true,\"event\":\"CREATE_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterCreate\",\"script\":\"var o \\u003d new Obj(entry());\\no.Create(lib().title);\"}]",
+      "entry_pages": "{\"pages\":[{\"d\":true,\"f\":[0,1,2,3,4,5],\"hide_aggr\":[],\"inv\":[],\"ml\":[],\"t\":\"Person\"},{\"d\":false,\"f\":[],\"hide_aggr\":[],\"inv\":[],\"ml\":[\"YtTzn)1PNNG87wYuT]kK\"],\"t\":\"Hidden\"}]}",
+      "templates": [
+        {
+          "u": "Ejmp)A1*B5h&<@%kIeGd",
+          "tt": "Obj",
+          "type": "ft_lib_entry",
+          "usg": "NOT_USAGE",
+          "num": 0,
+          "order": 0,
+          "lib": "ZsKuiYBOObGLltGQXLp(",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "_index_{\"i\":3,\"t\":\"Obj\"}",
+              "i": 0,
+              "o": "Ejmp)A1*B5h&<@%kIeGd",
+              "t": "Ejmp)A1*B5h&<@%kIeGd"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"attrJsonTemplates\":[],\"relationType\":2,\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        },
+        {
+          "u": "LucwBRY73n%zliJ(PYC<",
+          "tt": "DisplayName",
+          "type": "ft_string",
+          "usg": "USAGE_IN_TITLE",
+          "num": 1,
+          "order": 1,
+          "lib": "ZsKuiYBOObGLltGQXLp(",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "new Person",
+              "i": 2,
+              "o": "LucwBRY73n%zliJ(PYC<",
+              "t": "LucwBRY73n%zliJ(PYC<"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": true
+        },
+        {
+          "u": "Y*<uO8Z&[6S*jJl*bW5w",
+          "tt": "FirstName",
+          "type": "ft_string",
+          "usg": "NOT_USAGE",
+          "num": 2,
+          "order": 2,
+          "lib": "ZsKuiYBOObGLltGQXLp(",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "i": 2,
+              "o": "Y*<uO8Z&[6S*jJl*bW5w",
+              "t": "Y*<uO8Z&[6S*jJl*bW5w"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        },
+        {
+          "u": "@kC!t*!oI3XGEw0>PGg>",
+          "tt": "LastName",
+          "type": "ft_string",
+          "usg": "NOT_USAGE",
+          "num": 3,
+          "order": 3,
+          "lib": "ZsKuiYBOObGLltGQXLp(",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "i": 2,
+              "o": "@kC!t*!oI3XGEw0>PGg>",
+              "t": "@kC!t*!oI3XGEw0>PGg>"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        },
+        {
+          "u": "Xu7V3#IrK[bk9jo3Mi2#",
+          "tt": "BirthdayDate",
+          "type": "ft_date",
+          "usg": "NOT_USAGE",
+          "num": 4,
+          "order": 4,
+          "lib": "ZsKuiYBOObGLltGQXLp(",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "i": 1,
+              "o": "Xu7V3#IrK[bk9jo3Mi2#",
+              "t": "Xu7V3#IrK[bk9jo3Mi2#"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"dateTimeFormats\":{\"dateFormat\":\"dd.MM.yy\",\"dateFormatLang\":\"de_DE\",\"shortDateFormat\":\"dd.MM.yy\"},\"endYear\":2100,\"startYear\":1900,\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        },
+        {
+          "u": "XCz!]YynD[do0L[qIK@m",
+          "tt": "BirthdayTime",
+          "type": "ft_time_interval",
+          "usg": "NOT_USAGE",
+          "num": 5,
+          "order": 5,
+          "lib": "ZsKuiYBOObGLltGQXLp(",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "i": 1,
+              "o": "XCz!]YynD[do0L[qIK@m",
+              "t": "XCz!]YynD[do0L[qIK@m"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"dateTimeFormats\":{},\"endYear\":2100,\"startYear\":1900,\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        }
+      ],
+      "scripts_permissions": "{\"fileRead\":true,\"fileWrite\":true,\"libraries\":true,\"librariesIds\":[],\"librariesTitles\":{},\"network\":false}"
+    },
+    {
+      "title": "ObjType",
+      "id": "Hxu:LJTmTL1a+w(vMs(O",
+      "color": -2236963,
+      "icon": "flat:folder_blue.png",
+      "unique_names": true,
+      "triggers": "[{\"enabled\":true,\"event\":\"MODIFY_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterSave\",\"script\":\"var o \\u003d new Obj(entry());\\no.Save();\"},{\"enabled\":true,\"event\":\"CREATE_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterCreate\",\"script\":\"var o \\u003d new Obj(entry());\\no.Create(lib().title);\"},{\"enabled\":true,\"event\":\"LINK_ENTRY\",\"jsLibs\":[],\"moment\":\"BEFORE_SAVE\",\"name\":\"linkedToObj\",\"script\":\"var baseName;\\nvar objTypeName;\\n\\nif(masterLib().title \\u003d\\u003d \\\"Obj\\\") {\\n  baseName \\u003d masterEntry().field(\\\"BaseObjType\\\")[0].field(\\\"Name\\\");\\n  objTypeName \\u003d entry().field(\\\"Name\\\");\\n  if(baseName !\\u003d objTypeName) {\\n    var typeLib \\u003d libByName(objTypeName);\\n    var iFace \\u003d new Object();\\n    iFace \\u003d typeLib.create(iFace);\\n    masterEntry().link(objTypeName, iFace);\\n    iFace.link(\\\"Obj\\\", masterEntry());\\n  }\\n}\"},{\"attrJson\":\"{\\\"arguementsTemplates\\\":[]}\",\"enabled\":true,\"event\":\"ACTION\",\"filter\":\"{\\\"group\\\":0,\\\"items\\\":[{\\\"t\\\":\\\"ETtpkUz]!]mVE32*[WwB\\\",\\\"r\\\":\\\"{\\\\\\\"b\\\\\\\":true}\\\"}]}\",\"icon\":\"nova:add-circle-1.png\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"LIST_ITEM_ENTRY_CONTEXT\",\"name\":\"Create\",\"script\":\"var o \\u003d Create(entry().field(\\\"Name\\\"));\\no.Current.show();\"}]",
+      "entry_pages": "{\"pages\":[{\"d\":true,\"f\":[0,1,2,3,4,5,6],\"hide_aggr\":[],\"inv\":[],\"ml\":[],\"t\":\"ObjType\"},{\"d\":false,\"f\":[],\"hide_aggr\":[],\"inv\":[],\"ml\":[\"YtTzn)1PNNG87wYuT]kK\",\"Hxu:LJTmTL1a+w(vMs(O\"],\"t\":\"Hidden\"}]}",
+      "templates": [
+        {
+          "u": "@I9i@i@eN;q@F[x0><rK",
+          "tt": "Obj",
+          "type": "ft_lib_entry",
+          "usg": "NOT_USAGE",
+          "num": 0,
+          "order": 0,
+          "lib": "Hxu:LJTmTL1a+w(vMs(O",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "_index_{\"i\":3,\"t\":\"Obj\"}",
+              "i": 0,
+              "o": "@I9i@i@eN;q@F[x0><rK",
+              "t": "@I9i@i@eN;q@F[x0><rK"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"attrJsonTemplates\":[],\"relationType\":2,\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        },
+        {
+          "u": "Ub-nC#Axl5lplPzs3:cb",
+          "tt": "DisplayName",
+          "type": "ft_string",
+          "usg": "USAGE_IN_TITLE",
+          "num": 1,
+          "order": 1,
+          "lib": "Hxu:LJTmTL1a+w(vMs(O",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "",
+              "i": 2,
+              "o": "Ub-nC#Axl5lplPzs3:cb",
+              "t": "Ub-nC#Axl5lplPzs3:cb"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": true
+        },
+        {
+          "u": "UIG9[N540SL7A+[MLc*(",
+          "tt": "Name",
+          "type": "ft_string",
+          "usg": "NOT_USAGE",
+          "num": 2,
+          "order": 2,
+          "lib": "Hxu:LJTmTL1a+w(vMs(O",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "",
+              "i": 2,
+              "o": "UIG9[N540SL7A+[MLc*(",
+              "t": "UIG9[N540SL7A+[MLc*("
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        },
+        {
+          "u": "ETtpkUz]!]mVE32*[WwB",
+          "tt": "ObjType.Creatable",
+          "type": "ft_boolean",
+          "usg": "NOT_USAGE",
+          "num": 6,
+          "order": 3,
+          "lib": "Hxu:LJTmTL1a+w(vMs(O",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "Ja::Nein::0",
+              "i": 0,
+              "o": "ETtpkUz]!]mVE32*[WwB",
+              "t": "ETtpkUz]!]mVE32*[WwB"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        },
+        {
+          "u": "MdEhk<BzPPuIGMOn0Wpk",
+          "tt": "DisplayNameStructure",
+          "type": "ft_string",
+          "usg": "NOT_USAGE",
+          "num": 3,
+          "order": 4,
+          "lib": "Hxu:LJTmTL1a+w(vMs(O",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "this.Id()",
+              "i": 2,
+              "o": "MdEhk<BzPPuIGMOn0Wpk",
+              "t": "MdEhk<BzPPuIGMOn0Wpk"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        },
+        {
+          "u": "*j+x]:FDmgkobR-b#Cq<",
+          "tt": "PropertiesToSync",
+          "type": "ft_multy_str_list",
+          "usg": "NOT_USAGE",
+          "num": 4,
+          "order": 5,
+          "lib": "Hxu:LJTmTL1a+w(vMs(O",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "{\"sl\":[{\"t\":\"Id\",\"c\":2,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"DisplayName\",\"c\":1,\"i\":\"\",\"def\":true,\"c_text\":false}],\"sort\":false}",
+              "i": 8,
+              "o": "*j+x]:FDmgkobR-b#Cq<",
+              "t": "*j+x]:FDmgkobR-b#Cq<"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"delimiter\":\", \",\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        },
+        {
+          "u": "MN-8mk*kEo>]z(90*ii;",
+          "tt": "InterfaceTypes",
+          "type": "ft_lib_entry",
+          "usg": "NOT_USAGE",
+          "num": 5,
+          "order": 6,
+          "lib": "Hxu:LJTmTL1a+w(vMs(O",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "_index_{\"i\":2,\"t\":\"ObjType\"}",
+              "i": 0,
+              "o": "MN-8mk*kEo>]z(90*ii;",
+              "t": "MN-8mk*kEo>]z(90*ii;"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"attrJsonTemplates\":[],\"relationType\":0,\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        }
+      ],
+      "scripts_permissions": "{\"fileRead\":true,\"fileWrite\":true,\"libraries\":true,\"librariesIds\":[],\"librariesTitles\":{},\"network\":false}"
+    },
+    {
+      "title": "Obj",
+      "id": "YtTzn)1PNNG87wYuT]kK",
+      "color": -2236963,
+      "icon": "flat:folder_blue.png",
+      "unique_names": true,
+      "triggers": "[{\"attrJson\":\"{\\\"arguementsTemplates\\\":[]}\",\"enabled\":true,\"event\":\"ACTION\",\"icon\":\"nova:download-computer.png\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"LIBRARY_CONTEXT\",\"name\":\"InitializeDB\",\"script\":\"if(lib().entries().length !\\u003d 0) {\\n  message(\\\"This is not an empty library!\\\")\\n  exit();\\n}\\nvar obj \\u003d CreateObjType(\\\"Obj\\\");\\nvar objType \\u003d CreateObjType(\\\"ObjType\\\");\\nobj.field(\\\"Obj\\\")[0].link(\\\"BaseObjType\\\", objType);\\nobj.field(\\\"Obj\\\")[0].link(\\\"isObjType\\\", objType);\\nobjType.link(\\\"InterfaceTypes\\\", objType);\\n\\n// Settings\\nobj.set(\\\"DisplayNameStructure\\\", \\\"this.field(\\u0027Id\\u0027)\\\");\\nobjType.set(\\\"DisplayNameStructure\\\", \\\"this.field(\\u0027Name\\u0027)\\\");\\n\\n// Update\\nobj \\u003d new Obj(obj);\\nobjType \\u003d new Obj(objType);\\nobj.Save();\\nobjType.Save();\\n\\n// Person\\nvar person \\u003d Create(\\\"ObjType\\\");\\nperson.set(\\\"Name\\\", \\\"Person\\\");\\nperson.set(\\\"DisplayNameStructure\\\", \\\"this.field(\\u0027FirstName\\u0027) + \\u0027 \\u0027 + this.field(\\u0027LastName\\u0027)\\\");\\nperson.Current.link(\\\"InterfaceTypes\\\", obj.Current);\\nperson.Current.link(\\\"InterfaceTypes\\\", person.Current);\\nperson.Save();\"},{\"enabled\":true,\"event\":\"MODIFY_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterSave\",\"script\":\"var o \\u003d new Obj(entry());\\no.Save();\"},{\"enabled\":true,\"event\":\"CREATE_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterCreate\",\"script\":\"var o \\u003d new Obj(entry());\\no.Create(lib().title);\"}]",
+      "entry_pages": "{\"pages\":[{\"d\":true,\"f\":[0,1,2,3,4,5,6,7,8],\"hide_aggr\":[],\"inv\":[],\"ml\":[],\"t\":\"Obj\"},{\"d\":false,\"f\":[],\"hide_aggr\":[],\"inv\":[],\"ml\":[\"R!bbyE*nkGAZSttm3Leg\",\"YtTzn)1PNNG87wYuT]kK\",\"Hxu:LJTmTL1a+w(vMs(O\",\"ZsKuiYBOObGLltGQXLp(\"],\"t\":\"Hidden\"}]}",
+      "templates": [
+        {
+          "u": "GWIrAuMQ[fZ;%BB&WKI:",
+          "tt": "Id",
+          "type": "ft_int",
+          "usg": "NOT_USAGE",
+          "num": 0,
+          "order": 0,
+          "lib": "YtTzn)1PNNG87wYuT]kK",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "auto",
+              "i": 0,
+              "o": "GWIrAuMQ[fZ;%BB&WKI:",
+              "t": "GWIrAuMQ[fZ;%BB&WKI:"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"displayConvertUnitButton\":false,\"groupSeparator\":false,\"incDelta\":0.0,\"showCalc\":false,\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": true,
+          "readonly": true
+        },
+        {
+          "u": "[RumypB&M[ExzrPk]ah2",
+          "tt": "DisplayName",
+          "type": "ft_string",
+          "usg": "USAGE_IN_TITLE",
+          "num": 1,
+          "order": 1,
+          "lib": "YtTzn)1PNNG87wYuT]kK",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "",
+              "i": 2,
+              "o": "[RumypB&M[ExzrPk]ah2",
+              "t": "[RumypB&M[ExzrPk]ah2"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"fieldColorTarget\":0,\"fieldDelimiter\":\"\",\"textDrawable\":false}",
+          "unique": false,
+          "readonly": true
+        },
+        {
+          "u": "J3I[I0g>GK7(pYI#cCar",
+          "tt": "BaseObjType",
+          "type": "ft_lib_entry",
+          "usg": "NOT_USAGE",
+          "num": 5,
+          "order": 2,
+          "lib": "YtTzn)1PNNG87wYuT]kK",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "_index_{\"i\":2,\"t\":\"ObjType\"}",
+              "i": 0,
+              "o": "J3I[I0g>GK7(pYI#cCar",
+              "t": "J3I[I0g>GK7(pYI#cCar"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"attrJsonTemplates\":[],\"relationType\":1,\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        },
+        {
+          "u": ">9tGxSXlutA3X0U-KgTy",
+          "tt": "isObjType",
+          "type": "ft_lib_entry",
+          "usg": "NOT_USAGE",
+          "num": 6,
+          "order": 3,
+          "lib": "YtTzn)1PNNG87wYuT]kK",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "_index_{\"i\":2,\"t\":\"ObjType\"}",
+              "i": 0,
+              "o": ">9tGxSXlutA3X0U-KgTy",
+              "t": ">9tGxSXlutA3X0U-KgTy"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"attrJsonTemplates\":[],\"relationType\":0,\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        },
+        {
+          "u": "QOp;1s9kTetcbrR[3(HI",
+          "tt": "created",
+          "type": "ft_date_time",
+          "usg": "NOT_USAGE",
+          "num": 8,
+          "order": 4,
+          "lib": "YtTzn)1PNNG87wYuT]kK",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "i": 2,
+              "o": "QOp;1s9kTetcbrR[3(HI",
+              "t": "QOp;1s9kTetcbrR[3(HI"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"dateTimeFormats\":{\"dateFormatLang\":\"de_DE\",\"shortDateFormat\":\"dd.MM.yy\"},\"endYear\":2100,\"startYear\":1900,\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        },
+        {
+          "u": "PAL*Miq>;T+fCjStVk@O",
+          "tt": "Interfaces",
+          "type": "ft_subheader",
+          "usg": "NOT_USAGE",
+          "num": 2,
+          "order": 5,
+          "lib": "YtTzn)1PNNG87wYuT]kK",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "",
+              "i": 0,
+              "o": "PAL*Miq>;T+fCjStVk@O",
+              "t": "PAL*Miq>;T+fCjStVk@O"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"fieldColorTarget\":0,\"font\":{\"color\":-13783129,\"defaultColor\":false,\"family\":\"sans-serif\",\"size\":18,\"style\":1},\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        },
+        {
+          "u": "TFGvZE>YnR+*21QN85*V",
+          "tt": "Obj",
+          "type": "ft_lib_entry",
+          "usg": "NOT_USAGE",
+          "num": 3,
+          "order": 6,
+          "lib": "YtTzn)1PNNG87wYuT]kK",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "_index_{\"i\":3,\"t\":\"Obj\"}",
+              "i": 0,
+              "o": "TFGvZE>YnR+*21QN85*V",
+              "t": "TFGvZE>YnR+*21QN85*V"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"attrJsonTemplates\":[],\"relationType\":2,\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": true
+        },
+        {
+          "u": "#i*iR018gD*:D*-VV%pa",
+          "tt": "ObjType",
+          "type": "ft_lib_entry",
+          "usg": "NOT_USAGE",
+          "num": 4,
+          "order": 7,
+          "lib": "YtTzn)1PNNG87wYuT]kK",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "_index_{\"i\":2,\"t\":\"ObjType\"}",
+              "i": 0,
+              "o": "#i*iR018gD*:D*-VV%pa",
+              "t": "#i*iR018gD*:D*-VV%pa"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"attrJsonTemplates\":[],\"relationType\":1,\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": true
+        },
+        {
+          "u": "LSKj*pnu)+uGTOO5g6O2",
+          "tt": "Person",
+          "type": "ft_lib_entry",
+          "usg": "NOT_USAGE",
+          "num": 7,
+          "order": 8,
+          "lib": "YtTzn)1PNNG87wYuT]kK",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "_index_{\"i\":1,\"t\":\"Person\"}",
+              "i": 0,
+              "o": "LSKj*pnu)+uGTOO5g6O2",
+              "t": "LSKj*pnu)+uGTOO5g6O2"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"attrJsonTemplates\":[],\"relationType\":2,\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        }
+      ],
+      "scripts_permissions": "{\"fileRead\":true,\"fileWrite\":true,\"libraries\":true,\"librariesIds\":[],\"librariesTitles\":{},\"network\":false}"
+    }
+  ]
+}
