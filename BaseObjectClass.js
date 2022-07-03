@@ -81,6 +81,7 @@ Obj.prototype.SyncProperties = function() {
     for(var j = 0; j < this.Types().length; j++) {
       iFace = this.Obj().field(this.Types()[j].field("Name"))[0];
       if(iFace.id != this.Current.id) {
+		message(iFace.library().title);
         iFace.set(propName, propValue);
       }
     }
