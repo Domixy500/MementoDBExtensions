@@ -85,7 +85,7 @@ Obj.prototype.SyncProperties = function() {
 					iFace.set(propName, propValue);
 				}
 				catch(err) {
-					message("Property '" + propName + "' is not defined for interface '" + this.Types()[j].field("Name") + "'!");
+					
 				}
 			}
 		}
