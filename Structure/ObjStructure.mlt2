@@ -69,7 +69,7 @@
   "color": -2236963,
   "icon": "flat:folder_blue.png",
   "unique_names": false,
-  "triggers": "[{\"enabled\":true,\"event\":\"MODIFY_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterSave\",\"script\":\"var o \\u003d new Obj(entry());\\no.Save();\"},{\"enabled\":true,\"event\":\"CREATE_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterCreate\",\"script\":\"var o \\u003d new Obj(entry());\\no.Create(lib().title);\"}]",
+  "triggers": "[{\"enabled\":true,\"event\":\"MODIFY_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\",\"moment.min.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterSave\",\"script\":\"var o \\u003d new Obj(entry());\\no.Save();\"},{\"enabled\":true,\"event\":\"CREATE_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\",\"moment.min.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterCreate\",\"script\":\"var o \\u003d new Obj(entry());\\no.Create(lib().title);\"}]",
   "related_libraries": [
     {
       "title": "ObjType",
@@ -248,7 +248,7 @@
           "hint": "",
           "cnt": [
             {
-              "s": "{\"sl\":[{\"t\":\"Id\",\"c\":2,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"DisplayName\",\"c\":1,\"i\":\"\",\"def\":true,\"c_text\":false},{\"t\":\"ObjType.Creatable\",\"c\":3,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"Name\",\"c\":4,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"DisplayNameStructure\",\"c\":5,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"PropertiesToSync\",\"c\":6,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"InterfaceTypes\",\"c\":7,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"FirstName\",\"c\":8,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"LastName\",\"c\":9,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"StartDate\",\"c\":10,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"ActivityType\",\"c\":11,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"EndDate\",\"c\":12,\"def\":false,\"c_text\":false},{\"t\":\"Participants\",\"c\":13,\"def\":false,\"c_text\":false}],\"sort\":false}",
+              "s": "{\"sl\":[{\"t\":\"Id\",\"c\":2,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"DisplayName\",\"c\":1,\"i\":\"\",\"def\":true,\"c_text\":false},{\"t\":\"ObjType.Creatable\",\"c\":3,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"Name\",\"c\":4,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"DisplayNameStructure\",\"c\":5,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"PropertiesToSync\",\"c\":6,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"InterfaceTypes\",\"c\":7,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"FirstName\",\"c\":8,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"LastName\",\"c\":9,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"StartDate\",\"c\":10,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"ActivityType\",\"c\":11,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"EndDate\",\"c\":12,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"Participants\",\"c\":13,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"Description\",\"c\":14,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"Label\",\"c\":15,\"def\":false,\"c_text\":false}],\"sort\":false}",
               "i": 8,
               "o": "*j+x]:FDmgkobR-b#Cq<",
               "t": "*j+x]:FDmgkobR-b#Cq<"
@@ -306,8 +306,8 @@
       "color": -2236963,
       "icon": "flat:folder_blue.png",
       "unique_names": false,
-      "triggers": "[{\"attrJson\":\"{\\\"arguementsTemplates\\\":[]}\",\"enabled\":true,\"event\":\"ACTION\",\"icon\":\"nova:download-computer.png\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"LIBRARY_CONTEXT\",\"name\":\"InitializeDB\",\"script\":\"if(lib().entries().length !\\u003d 0) {\\n  message(\\\"This is not an empty library!\\\")\\n  exit();\\n}\\nvar obj \\u003d CreateObjType(\\\"Obj\\\");\\nvar objType \\u003d CreateObjType(\\\"ObjType\\\");\\nobj.field(\\\"Obj\\\")[0].link(\\\"BaseObjType\\\", objType);\\nobj.field(\\\"Obj\\\")[0].link(\\\"isObjType\\\", objType);\\nobjType.link(\\\"InterfaceTypes\\\", objType);\\n\\n// Settings\\nobj.set(\\\"DisplayNameStructure\\\", \\\"this.field(\\u0027Id\\u0027)\\\");\\nobjType.set(\\\"DisplayNameStructure\\\", \\\"this.field(\\u0027Name\\u0027)\\\");\\nobjType.set(\\\"PropertiesToSync\\\", \\\"DisplayName, ObjType.Creatable, Name, DisplayNameStructure, PropertiesToSync, InterfaceTypes\\\");\\n\\n// Update\\nobj \\u003d new Obj(obj);\\nobjType \\u003d new Obj(objType);\\nobj.Save();\\nobjType.Save();\\n\\n// Person\\nvar person \\u003d Create(\\\"ObjType\\\");\\nperson.set(\\\"Name\\\", \\\"Person\\\");\\nperson.set(\\\"DisplayNameStructure\\\", \\\"this.field(\\u0027FirstName\\u0027) + \\u0027 \\u0027 + this.field(\\u0027LastName\\u0027)\\\");\\nperson.set(\\\"PropertiesToSync\\\", \\\"DisplayName, FirstName, LastName\\\");\\nperson.Current.link(\\\"InterfaceTypes\\\", obj.Current);\\nperson.Current.link(\\\"InterfaceTypes\\\", person.Current);\\nperson.Save();\\n\\n// ActivityType\\nvar activityType \\u003d Create(\\\"ObjType\\\");\\nactivityType.set(\\\"Name\\\", \\\"ActivityType\\\");\\nactivityType.set(\\\"DisplayNameStructure\\\", \\\"this.field(\\u0027Name\\u0027)\\\");\\nactivityType.set(\\\"PropertiesToSync\\\", \\\"DisplayName, ObjType.Creatable, Name, DisplayNameStructure, PropertiesToSync, InterfaceTypes\\\");\\nactivityType.Current.link(\\\"InterfaceTypes\\\", obj.Current);\\nactivityType.Current.link(\\\"InterfaceTypes\\\", objType.Current);\\nactivityType.Current.link(\\\"InterfaceTypes\\\", activityType.Current);\\nactivityType.Save();\\n\\n// Activity\\nvar activity \\u003d Create(\\\"ActivityType\\\");\\nactivity.set(\\\"Name\\\", \\\"Activity\\\");\\nactivity.set(\\\"DisplayNameStructure\\\", \\\"this.field(\\u0027StartDate\\u0027)\\\");\\nactivity.set(\\\"PropertiesToSync\\\", \\\"DisplayName, StartDate, EndDate, Participants\\\");\\nactivity.Current.link(\\\"InterfaceTypes\\\", obj.Current);\\nactivity.Current.link(\\\"InterfaceTypes\\\", activity.Current);\\nactivity.Save();\"},{\"enabled\":true,\"event\":\"MODIFY_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterSave\",\"script\":\"var o \\u003d new Obj(entry());\\no.Save();\"},{\"enabled\":true,\"event\":\"CREATE_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterCreate\",\"script\":\"var o \\u003d new Obj(entry());\\no.Create(lib().title);\"}]",
-      "entry_pages": "{\"pages\":[{\"d\":true,\"f\":[0,1,2,3,4,5,6,7,8,9,10],\"hide_aggr\":[],\"inv\":[],\"ml\":[],\"t\":\"Obj\"},{\"d\":false,\"f\":[],\"hide_aggr\":[],\"inv\":[],\"ml\":[\"R!bbyE*nkGAZSttm3Leg\",\"YtTzn)1PNNG87wYuT]kK\",\"Hxu:LJTmTL1a+w(vMs(O\",\"ZsKuiYBOObGLltGQXLp(\",\"YDGyL0IOM]*-FlJkTQ(S\",\"]S17C2QrjL@q7(2X*L75\"],\"t\":\"Hidden\"}]}",
+      "triggers": "[{\"attrJson\":\"{\\\"arguementsTemplates\\\":[]}\",\"enabled\":true,\"event\":\"ACTION\",\"icon\":\"nova:download-computer.png\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"LIBRARY_CONTEXT\",\"name\":\"InitializeDB\",\"script\":\"if(lib().entries().length !\\u003d 0) {\\n  message(\\\"This is not an empty library!\\\")\\n  exit();\\n}\\nvar obj \\u003d CreateObjType(\\\"Obj\\\");\\nvar objType \\u003d CreateObjType(\\\"ObjType\\\");\\nobj.field(\\\"Obj\\\")[0].link(\\\"BaseObjType\\\", objType);\\nobj.field(\\\"Obj\\\")[0].link(\\\"isObjType\\\", objType);\\nobjType.link(\\\"InterfaceTypes\\\", objType);\\n\\n// Settings\\nobj.set(\\\"DisplayNameStructure\\\", \\\"this.field(\\u0027Id\\u0027)\\\");\\nobjType.set(\\\"DisplayNameStructure\\\", \\\"this.field(\\u0027Name\\u0027)\\\");\\nobjType.set(\\\"PropertiesToSync\\\", \\\"DisplayName, ObjType.Creatable, Name, DisplayNameStructure, PropertiesToSync, InterfaceTypes\\\");\\n\\n// Update\\nobj \\u003d new Obj(obj);\\nobjType \\u003d new Obj(objType);\\nobj.Save();\\nobjType.Save();\\n\\n// Person\\nvar person \\u003d Create(\\\"ObjType\\\");\\nperson.set(\\\"Name\\\", \\\"Person\\\");\\nperson.set(\\\"DisplayNameStructure\\\", \\\"this.field(\\u0027FirstName\\u0027) + \\u0027 \\u0027 + this.field(\\u0027LastName\\u0027)\\\");\\nperson.set(\\\"PropertiesToSync\\\", \\\"DisplayName, FirstName, LastName\\\");\\nperson.Current.link(\\\"InterfaceTypes\\\", obj.Current);\\nperson.Current.link(\\\"InterfaceTypes\\\", person.Current);\\nperson.Save();\\n\\n// ActivityType\\nvar activityType \\u003d Create(\\\"ObjType\\\");\\nactivityType.set(\\\"Name\\\", \\\"ActivityType\\\");\\nactivityType.set(\\\"DisplayNameStructure\\\", \\\"this.field(\\u0027Name\\u0027)\\\");\\nactivityType.set(\\\"PropertiesToSync\\\", \\\"DisplayName, ObjType.Creatable, Name, DisplayNameStructure, PropertiesToSync, InterfaceTypes\\\");\\nactivityType.Current.link(\\\"InterfaceTypes\\\", obj.Current);\\nactivityType.Current.link(\\\"InterfaceTypes\\\", objType.Current);\\nactivityType.Current.link(\\\"InterfaceTypes\\\", activityType.Current);\\nactivityType.Save();\\n\\n// Activity\\nvar activity \\u003d Create(\\\"ActivityType\\\");\\nactivity.set(\\\"Name\\\", \\\"Activity\\\");\\nactivity.set(\\\"DisplayNameStructure\\\", \\\"moment(this.field(\\u0027StartDate\\u0027)).format(\\u0027MM.DD.YY\\u0027) + \\u0027 \\u0027 + this.field(\\u0027ActivityType\\u0027)\\\");\\nactivity.set(\\\"PropertiesToSync\\\", \\\"DisplayName, StartDate, EndDate, Participants\\\");\\nactivity.Current.link(\\\"InterfaceTypes\\\", obj.Current);\\nactivity.Current.link(\\\"InterfaceTypes\\\", activity.Current);\\nactivity.Save();\\n\\n// CommonActivity\\nvar commonActivity \\u003d Create(\\\"ActivityType\\\");\\ncommonActivity.set(\\\"Name\\\", \\\"CommonActivity\\\");\\ncommonActivity.set(\\\"DisplayNameStructure\\\", \\\"moment(this.field(\\u0027StartDate\\u0027)).format(\\u0027MM.DD.YY\\u0027) + \\u0027 \\u0027 + this.field(\\u0027Label\\u0027)\\\");\\ncommonActivity.set(\\\"PropertiesToSync\\\", \\\"DisplayName, StartDate, EndDate, Participants, Label, Description\\\");\\ncommonActivity.Current.link(\\\"InterfaceTypes\\\", obj.Current);\\ncommonActivity.Current.link(\\\"InterfaceTypes\\\", activity.Current);\\ncommonActivity.Current.link(\\\"InterfaceTypes\\\", commonActivity.Current);\\ncommonActivity.Save();\"},{\"enabled\":true,\"event\":\"MODIFY_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\",\"moment.min.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterSave\",\"script\":\"var o \\u003d new Obj(entry());\\no.Save();\"},{\"enabled\":true,\"event\":\"CREATE_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\",\"moment.min.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterCreate\",\"script\":\"var o \\u003d new Obj(entry());\\no.Create(lib().title);\"}]",
+      "entry_pages": "{\"pages\":[{\"d\":true,\"f\":[0,1,2,3,4,5,6,7,8,9,10,11],\"hide_aggr\":[],\"inv\":[],\"ml\":[],\"t\":\"Obj\"},{\"d\":false,\"f\":[],\"hide_aggr\":[],\"inv\":[],\"ml\":[\"R!bbyE*nkGAZSttm3Leg\",\"YtTzn)1PNNG87wYuT]kK\",\"Hxu:LJTmTL1a+w(vMs(O\",\"ZsKuiYBOObGLltGQXLp(\",\"YDGyL0IOM]*-FlJkTQ(S\",\"]S17C2QrjL@q7(2X*L75\",\"*Ni3:q5:%Z1B\\u0026-Iq]ES;\"],\"t\":\"Hidden\"}]}",
       "templates": [
         {
           "u": "GWIrAuMQ[fZ;%BB&WKI:",
@@ -569,7 +569,7 @@
           "hint": "",
           "cnt": [
             {
-              "s": "_index_{\"i\":3,\"t\":\"Person\"}",
+              "s": "_index_{\"i\":4,\"t\":\"Person\"}",
               "i": 0,
               "o": "LSKj*pnu)+uGTOO5g6O2",
               "t": "LSKj*pnu)+uGTOO5g6O2"
@@ -600,7 +600,7 @@
           "hint": "",
           "cnt": [
             {
-              "s": "_index_{\"i\":5,\"t\":\"ActivityType\"}",
+              "s": "_index_{\"i\":6,\"t\":\"ActivityType\"}",
               "i": 0,
               "o": "]]VZjgfwGUFY;8:F5M>b",
               "t": "]]VZjgfwGUFY;8:F5M>b"
@@ -631,7 +631,7 @@
           "hint": "",
           "cnt": [
             {
-              "s": "_index_{\"i\":4,\"t\":\"Activity\"}",
+              "s": "_index_{\"i\":5,\"t\":\"Activity\"}",
               "i": 0,
               "o": "-#%H*VpIgomMH@OSYKZE",
               "t": "-#%H*VpIgomMH@OSYKZE"
@@ -646,6 +646,263 @@
           "autofill": "",
           "card_align": 0,
           "json_options": "{\"attrJsonTemplates\":[],\"relationType\":2,\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        },
+        {
+          "u": "Lx&7a!L:@88s-@W!J;><",
+          "tt": "CommonActivity",
+          "type": "ft_lib_entry",
+          "usg": "NOT_USAGE",
+          "num": 11,
+          "order": 11,
+          "lib": "YtTzn)1PNNG87wYuT]kK",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "_index_{\"i\":3,\"t\":\"CommonActivity\"}",
+              "i": 0,
+              "o": "Lx&7a!L:@88s-@W!J;><",
+              "t": "Lx&7a!L:@88s-@W!J;><"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"attrJsonTemplates\":[],\"relationType\":2,\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        }
+      ],
+      "scripts_permissions": "{\"fileRead\":true,\"fileWrite\":true,\"libraries\":true,\"librariesIds\":[],\"librariesTitles\":{},\"network\":false}"
+    },
+    {
+      "title": "CommonActivity",
+      "id": "*Ni3:q5:%Z1B&-Iq]ES;",
+      "color": -2236963,
+      "icon": "flat:folder_blue.png",
+      "unique_names": false,
+      "triggers": "[{\"enabled\":true,\"event\":\"MODIFY_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\",\"moment.min.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterSave\",\"script\":\"var o \\u003d new Obj(entry());\\no.Save();\"},{\"enabled\":true,\"event\":\"CREATE_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\",\"moment.min.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterCreate\",\"script\":\"var o \\u003d new Obj(entry());\\no.Create(lib().title);\"}]",
+      "entry_pages": "{\"pages\":[{\"d\":true,\"f\":[0,1,2,3,4,5,6],\"hide_aggr\":[],\"inv\":[],\"ml\":[],\"t\":\"CommonActivity\"},{\"d\":false,\"f\":[],\"hide_aggr\":[],\"inv\":[],\"ml\":[],\"t\":\"Hidden\"}]}",
+      "templates": [
+        {
+          "u": "Hg]anOm]8-L0uQ3D3R@N",
+          "tt": "Label",
+          "type": "ft_string",
+          "usg": "NOT_USAGE",
+          "num": 5,
+          "order": 0,
+          "lib": "*Ni3:q5:%Z1B&-Iq]ES;",
+          "r": true,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "",
+              "i": 2,
+              "o": "Hg]anOm]8-L0uQ3D3R@N",
+              "t": "Hg]anOm]8-L0uQ3D3R@N"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        },
+        {
+          "u": "@j5FFmj[ddg!R98p3(vA",
+          "tt": "Description",
+          "type": "ft_string",
+          "usg": "NOT_USAGE",
+          "num": 6,
+          "order": 1,
+          "lib": "*Ni3:q5:%Z1B&-Iq]ES;",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "i": 0,
+              "o": "@j5FFmj[ddg!R98p3(vA",
+              "t": "@j5FFmj[ddg!R98p3(vA"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        },
+        {
+          "u": "T&ELhFbIJQEQQ4888JJR",
+          "tt": "Obj",
+          "type": "ft_lib_entry",
+          "usg": "NOT_USAGE",
+          "num": 0,
+          "order": 2,
+          "lib": "*Ni3:q5:%Z1B&-Iq]ES;",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "_index_{\"i\":2,\"t\":\"Obj\"}",
+              "i": 0,
+              "o": "T&ELhFbIJQEQQ4888JJR",
+              "t": "T&ELhFbIJQEQQ4888JJR"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"attrJsonTemplates\":[],\"relationType\":2,\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        },
+        {
+          "u": "P2sWWzluNUvY%e64bwRJ",
+          "tt": "DisplayName",
+          "type": "ft_string",
+          "usg": "USAGE_IN_TITLE",
+          "num": 1,
+          "order": 3,
+          "lib": "*Ni3:q5:%Z1B&-Iq]ES;",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "",
+              "i": 2,
+              "o": "P2sWWzluNUvY%e64bwRJ",
+              "t": "P2sWWzluNUvY%e64bwRJ"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": true
+        },
+        {
+          "u": "Zc3cD%BIaZn)5I&&@f<g",
+          "tt": "StartDate",
+          "type": "ft_date_time",
+          "usg": "NOT_USAGE",
+          "num": 2,
+          "order": 4,
+          "lib": "*Ni3:q5:%Z1B&-Iq]ES;",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "i": 2,
+              "o": "Zc3cD%BIaZn)5I&&@f<g",
+              "t": "Zc3cD%BIaZn)5I&&@f<g"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"dateTimeFormats\":{\"dateFormat\":\"dd.MM.yy\",\"dateFormatLang\":\"de_DE\",\"shortTimeFormat\":\"HH:mm\",\"timeFormat\":\"HH:mm\"},\"endYear\":2100,\"startYear\":1900,\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        },
+        {
+          "u": "-zWlfcduhI*<aQ[1F!kx",
+          "tt": "EndDate",
+          "type": "ft_date_time",
+          "usg": "NOT_USAGE",
+          "num": 3,
+          "order": 5,
+          "lib": "*Ni3:q5:%Z1B&-Iq]ES;",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "i": 2,
+              "o": "-zWlfcduhI*<aQ[1F!kx",
+              "t": "-zWlfcduhI*<aQ[1F!kx"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"dateTimeFormats\":{\"dateFormat\":\"dd.MM.yy\",\"dateFormatLang\":\"de_DE\",\"shortTimeFormat\":\"HH:mm\",\"timeFormat\":\"HH:mm\"},\"endYear\":2100,\"startYear\":1900,\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        },
+        {
+          "u": "*jANAK1wk1(gcKjPWB0d",
+          "tt": "Participants",
+          "type": "ft_lib_entry",
+          "usg": "NOT_USAGE",
+          "num": 4,
+          "order": 6,
+          "lib": "*Ni3:q5:%Z1B&-Iq]ES;",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "_index_{\"i\":4,\"t\":\"Person\"}",
+              "i": 0,
+              "o": "*jANAK1wk1(gcKjPWB0d",
+              "t": "*jANAK1wk1(gcKjPWB0d"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"attrJsonTemplates\":[],\"relationType\":0,\"fieldColorTarget\":0,\"textDrawable\":false}",
           "unique": false,
           "readonly": false
         }
@@ -852,8 +1109,8 @@
       "color": -2236963,
       "icon": "flat:folder_blue.png",
       "unique_names": false,
-      "triggers": "[{\"enabled\":true,\"event\":\"MODIFY_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterSave\",\"script\":\"var o \\u003d new Obj(entry());\\no.Save();\"},{\"enabled\":true,\"event\":\"CREATE_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterCreate\",\"script\":\"var o \\u003d new Obj(entry());\\no.Create(lib().title);\"}]",
-      "entry_pages": "{\"pages\":[{\"d\":true,\"f\":[0,1,2,3,4,5],\"hide_aggr\":[],\"inv\":[],\"ml\":[],\"t\":\"Template\"},{\"d\":false,\"f\":[],\"hide_aggr\":[],\"inv\":[],\"ml\":[\"YtTzn)1PNNG87wYuT]kK\"],\"t\":\"Hidden\"}]}",
+      "triggers": "[{\"enabled\":true,\"event\":\"MODIFY_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\",\"moment.min.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterSave\",\"script\":\"var o \\u003d new Obj(entry());\\no.Save();\"},{\"enabled\":true,\"event\":\"CREATE_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\",\"moment.min.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterCreate\",\"script\":\"var o \\u003d new Obj(entry());\\no.Create(lib().title);\"}]",
+      "entry_pages": "{\"pages\":[{\"d\":true,\"f\":[0,1,2,3,4,5],\"hide_aggr\":[],\"inv\":[],\"ml\":[],\"t\":\"Activity\"},{\"d\":false,\"f\":[],\"hide_aggr\":[],\"inv\":[],\"ml\":[\"YtTzn)1PNNG87wYuT]kK\"],\"t\":\"Hidden\"}]}",
       "templates": [
         {
           "u": "I41H*m%PRW>Fe[jeTle7",
@@ -990,7 +1247,7 @@
           "hint": "",
           "cnt": [
             {
-              "s": "_index_{\"i\":3,\"t\":\"Person\"}",
+              "s": "_index_{\"i\":4,\"t\":\"Person\"}",
               "i": 0,
               "o": "X[mvepfOB-1BOHM[ymDq",
               "t": "X[mvepfOB-1BOHM[ymDq"
@@ -1021,7 +1278,7 @@
           "hint": "",
           "cnt": [
             {
-              "s": "{\"expr\":\"var o = new Obj(entry());\\no.BaseTypeName();\",\"res\":4,\"s\":5,\"real_time\":false,\"libs\":[\"https:\\/\\/raw.githubusercontent.com\\/Domixy500\\/MementoDBExtensions\\/main\\/BaseObjectClass.js\"]}",
+              "s": "{\"expr\":\"var o = new Obj(entry());\\no.BaseTypeName();\",\"res\":4,\"s\":5,\"real_time\":true,\"libs\":[\"https:\\/\\/raw.githubusercontent.com\\/Domixy500\\/MementoDBExtensions\\/main\\/BaseObjectClass.js\"]}",
               "o": "VrRKsKEF0Z%LCDSYL:hm",
               "t": "VrRKsKEF0Z%LCDSYL:hm"
             }
@@ -1218,7 +1475,7 @@
           "hint": "",
           "cnt": [
             {
-              "s": "{\"sl\":[{\"t\":\"Id\",\"c\":2,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"DisplayName\",\"c\":1,\"i\":\"\",\"def\":true,\"c_text\":false},{\"t\":\"ObjType.Creatable\",\"c\":3,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"Name\",\"c\":4,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"DisplayNameStructure\",\"c\":5,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"PropertiesToSync\",\"c\":6,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"InterfaceTypes\",\"c\":7,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"StartDate\",\"c\":8,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"ActivityType\",\"c\":9,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"EndDate\",\"c\":10,\"def\":false,\"c_text\":false},{\"t\":\"Participants\",\"c\":11,\"def\":false,\"c_text\":false}],\"sort\":false}",
+              "s": "{\"sl\":[{\"t\":\"Id\",\"c\":2,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"DisplayName\",\"c\":1,\"i\":\"\",\"def\":true,\"c_text\":false},{\"t\":\"ObjType.Creatable\",\"c\":3,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"Name\",\"c\":4,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"DisplayNameStructure\",\"c\":5,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"PropertiesToSync\",\"c\":6,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"InterfaceTypes\",\"c\":7,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"StartDate\",\"c\":8,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"ActivityType\",\"c\":9,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"EndDate\",\"c\":10,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"Participants\",\"c\":11,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"Description\",\"c\":12,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"Label\",\"c\":13,\"def\":false,\"c_text\":false}],\"sort\":false}",
               "i": 8,
               "o": "IUTty0OM[b*0&Xf)A![I",
               "t": "IUTty0OM[b*0&Xf)A![I"
