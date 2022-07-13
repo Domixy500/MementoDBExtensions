@@ -13,7 +13,7 @@
       "hint": "",
       "cnt": [
         {
-          "s": "_index_{\"i\":3,\"t\":\"Obj\"}",
+          "s": "_index_{\"i\":2,\"t\":\"Obj\"}",
           "i": 0,
           "o": "-sYKT%UM]-NbL55OD*ev",
           "t": "-sYKT%UM]-NbL55OD*ev"
@@ -72,11 +72,561 @@
   "triggers": "[{\"enabled\":true,\"event\":\"MODIFY_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterSave\",\"script\":\"var o \\u003d new Obj(entry());\\no.Save();\"},{\"enabled\":true,\"event\":\"CREATE_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterCreate\",\"script\":\"var o \\u003d new Obj(entry());\\no.Create(lib().title);\"}]",
   "related_libraries": [
     {
+      "title": "ObjType",
+      "id": "Hxu:LJTmTL1a+w(vMs(O",
+      "color": -2236963,
+      "icon": "flat:folder_blue.png",
+      "unique_names": false,
+      "triggers": "[{\"enabled\":true,\"event\":\"MODIFY_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterSave\",\"script\":\"var o \\u003d new Obj(entry());\\no.Save();\"},{\"enabled\":true,\"event\":\"CREATE_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterCreate\",\"script\":\"var o \\u003d new Obj(entry());\\no.Create(lib().title);\"},{\"enabled\":true,\"event\":\"LINK_ENTRY\",\"jsLibs\":[],\"moment\":\"BEFORE_SAVE\",\"name\":\"linkedToObj\",\"script\":\"var baseName;\\nvar objTypeName;\\n\\nif(masterLib().title \\u003d\\u003d \\\"Obj\\\") {\\n  baseName \\u003d masterEntry().field(\\\"BaseObjType\\\")[0].field(\\\"Name\\\");\\n  objTypeName \\u003d entry().field(\\\"Name\\\");\\n  if(baseName !\\u003d objTypeName) {\\n    var typeLib \\u003d libByName(objTypeName);\\n    var iFace \\u003d new Object();\\n    iFace \\u003d typeLib.create(iFace);\\n    masterEntry().link(objTypeName, iFace);\\n    iFace.link(\\\"Obj\\\", masterEntry());\\n  }\\n}\"},{\"attrJson\":\"{\\\"arguementsTemplates\\\":[]}\",\"enabled\":true,\"event\":\"ACTION\",\"filter\":\"{\\\"group\\\":0,\\\"items\\\":[{\\\"t\\\":\\\"ETtpkUz]!]mVE32*[WwB\\\",\\\"r\\\":\\\"{\\\\\\\"b\\\\\\\":true}\\\"}]}\",\"icon\":\"nova:add-circle-1.png\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"LIST_ITEM_ENTRY_CONTEXT\",\"name\":\"Create\",\"script\":\"var o \\u003d Create(entry().field(\\\"Name\\\"));\\no.Current.show();\"}]",
+      "entry_pages": "{\"pages\":[{\"d\":true,\"f\":[0,1,2,3,4,5,6],\"hide_aggr\":[],\"inv\":[],\"ml\":[\"YDGyL0IOM]*-FlJkTQ(S\"],\"t\":\"ObjType\"},{\"d\":false,\"f\":[],\"hide_aggr\":[],\"inv\":[],\"ml\":[\"YtTzn)1PNNG87wYuT]kK\",\"Hxu:LJTmTL1a+w(vMs(O\"],\"t\":\"Hidden\"}]}",
+      "templates": [
+        {
+          "u": "@I9i@i@eN;q@F[x0><rK",
+          "tt": "Obj",
+          "type": "ft_lib_entry",
+          "usg": "NOT_USAGE",
+          "num": 0,
+          "order": 0,
+          "lib": "Hxu:LJTmTL1a+w(vMs(O",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "_index_{\"i\":2,\"t\":\"Obj\"}",
+              "i": 0,
+              "o": "@I9i@i@eN;q@F[x0><rK",
+              "t": "@I9i@i@eN;q@F[x0><rK"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"attrJsonTemplates\":[],\"relationType\":2,\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        },
+        {
+          "u": "Ub-nC#Axl5lplPzs3:cb",
+          "tt": "DisplayName",
+          "type": "ft_string",
+          "usg": "USAGE_IN_TITLE",
+          "num": 1,
+          "order": 1,
+          "lib": "Hxu:LJTmTL1a+w(vMs(O",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "new ObjType",
+              "i": 2,
+              "o": "Ub-nC#Axl5lplPzs3:cb",
+              "t": "Ub-nC#Axl5lplPzs3:cb"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"fieldColorTarget\":0,\"fieldDelimiter\":\"\",\"textDrawable\":false}",
+          "unique": false,
+          "readonly": true
+        },
+        {
+          "u": "UIG9[N540SL7A+[MLc*(",
+          "tt": "Name",
+          "type": "ft_string",
+          "usg": "NOT_USAGE",
+          "num": 2,
+          "order": 2,
+          "lib": "Hxu:LJTmTL1a+w(vMs(O",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "",
+              "i": 2,
+              "o": "UIG9[N540SL7A+[MLc*(",
+              "t": "UIG9[N540SL7A+[MLc*("
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": true,
+          "readonly": false
+        },
+        {
+          "u": "ETtpkUz]!]mVE32*[WwB",
+          "tt": "ObjType.Creatable",
+          "type": "ft_boolean",
+          "usg": "NOT_USAGE",
+          "num": 6,
+          "order": 3,
+          "lib": "Hxu:LJTmTL1a+w(vMs(O",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "Ja::Nein::0",
+              "i": 0,
+              "o": "ETtpkUz]!]mVE32*[WwB",
+              "t": "ETtpkUz]!]mVE32*[WwB"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        },
+        {
+          "u": "MdEhk<BzPPuIGMOn0Wpk",
+          "tt": "DisplayNameStructure",
+          "type": "ft_string",
+          "usg": "NOT_USAGE",
+          "num": 3,
+          "order": 4,
+          "lib": "Hxu:LJTmTL1a+w(vMs(O",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "this.Id()",
+              "i": 2,
+              "o": "MdEhk<BzPPuIGMOn0Wpk",
+              "t": "MdEhk<BzPPuIGMOn0Wpk"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        },
+        {
+          "u": "*j+x]:FDmgkobR-b#Cq<",
+          "tt": "PropertiesToSync",
+          "type": "ft_multy_str_list",
+          "usg": "NOT_USAGE",
+          "num": 4,
+          "order": 5,
+          "lib": "Hxu:LJTmTL1a+w(vMs(O",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "{\"sl\":[{\"t\":\"Id\",\"c\":2,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"DisplayName\",\"c\":1,\"i\":\"\",\"def\":true,\"c_text\":false},{\"t\":\"ObjType.Creatable\",\"c\":3,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"Name\",\"c\":4,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"DisplayNameStructure\",\"c\":5,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"PropertiesToSync\",\"c\":6,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"InterfaceTypes\",\"c\":7,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"FirstName\",\"c\":8,\"def\":false,\"c_text\":false},{\"t\":\"LastName\",\"c\":9,\"def\":false,\"c_text\":false}],\"sort\":false}",
+              "i": 8,
+              "o": "*j+x]:FDmgkobR-b#Cq<",
+              "t": "*j+x]:FDmgkobR-b#Cq<"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"delimiter\":\", \",\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        },
+        {
+          "u": "MN-8mk*kEo>]z(90*ii;",
+          "tt": "InterfaceTypes",
+          "type": "ft_lib_entry",
+          "usg": "NOT_USAGE",
+          "num": 5,
+          "order": 6,
+          "lib": "Hxu:LJTmTL1a+w(vMs(O",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "_index_{\"i\":1,\"t\":\"ObjType\"}",
+              "i": 0,
+              "o": "MN-8mk*kEo>]z(90*ii;",
+              "t": "MN-8mk*kEo>]z(90*ii;"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"attrJsonTemplates\":[],\"relationType\":0,\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        }
+      ],
+      "scripts_permissions": "{\"fileRead\":true,\"fileWrite\":true,\"libraries\":true,\"librariesIds\":[],\"librariesTitles\":{},\"network\":false}"
+    },
+    {
+      "title": "Obj",
+      "id": "YtTzn)1PNNG87wYuT]kK",
+      "color": -2236963,
+      "icon": "flat:folder_blue.png",
+      "unique_names": false,
+      "triggers": "[{\"attrJson\":\"{\\\"arguementsTemplates\\\":[]}\",\"enabled\":true,\"event\":\"ACTION\",\"icon\":\"nova:download-computer.png\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"LIBRARY_CONTEXT\",\"name\":\"InitializeDB\",\"script\":\"if(lib().entries().length !\\u003d 0) {\\n  message(\\\"This is not an empty library!\\\")\\n  exit();\\n}\\nvar obj \\u003d CreateObjType(\\\"Obj\\\");\\nvar objType \\u003d CreateObjType(\\\"ObjType\\\");\\nobj.field(\\\"Obj\\\")[0].link(\\\"BaseObjType\\\", objType);\\nobj.field(\\\"Obj\\\")[0].link(\\\"isObjType\\\", objType);\\nobjType.link(\\\"InterfaceTypes\\\", objType);\\n\\n// Settings\\nobj.set(\\\"DisplayNameStructure\\\", \\\"this.field(\\u0027Id\\u0027)\\\");\\nobjType.set(\\\"DisplayNameStructure\\\", \\\"this.field(\\u0027Name\\u0027)\\\");\\nobjType.set(\\\"PropertiesToSync\\\", \\\"DisplayName, ObjType.Creatable, Name, DisplayNameStructure, PropertiesToSync, InterfaceTypes\\\");\\n\\n// Update\\nobj \\u003d new Obj(obj);\\nobjType \\u003d new Obj(objType);\\nobj.Save();\\nobjType.Save();\\n\\n// Person\\nvar person \\u003d Create(\\\"ObjType\\\");\\nperson.set(\\\"Name\\\", \\\"Person\\\");\\nperson.set(\\\"DisplayNameStructure\\\", \\\"this.field(\\u0027FirstName\\u0027) + \\u0027 \\u0027 + this.field(\\u0027LastName\\u0027)\\\");\\nperson.set(\\\"PropertiesToSync\\\", \\\"DisplayName, FirstName, LastName\\\");\\nperson.Current.link(\\\"InterfaceTypes\\\", obj.Current);\\nperson.Current.link(\\\"InterfaceTypes\\\", person.Current);\\nperson.Save();\\n\\n// ActivityType\\nvar activityType \\u003d Create(\\\"ObjType\\\");\\nactivityType.set(\\\"Name\\\", \\\"ActivityType\\\");\\nactivityType.set(\\\"DisplayNameStructure\\\", \\\"this.field(\\u0027Name\\u0027)\\\");\\nobjType.set(\\\"PropertiesToSync\\\", \\\"DisplayName, ObjType.Creatable, Name, DisplayNameStructure, PropertiesToSync, InterfaceTypes\\\");\\nactivityType.Current.link(\\\"InterfaceTypes\\\", obj.Current);\\nactivityType.Current.link(\\\"InterfaceTypes\\\", objType.Current);\\nactivityType.Current.link(\\\"InterfaceTypes\\\", activityType.Current);\\nactivityType.Save();\"},{\"enabled\":true,\"event\":\"MODIFY_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterSave\",\"script\":\"var o \\u003d new Obj(entry());\\no.Save();\"},{\"enabled\":true,\"event\":\"CREATE_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterCreate\",\"script\":\"var o \\u003d new Obj(entry());\\no.Create(lib().title);\"}]",
+      "entry_pages": "{\"pages\":[{\"d\":true,\"f\":[0,1,2,3,4,5,6,7,8,9],\"hide_aggr\":[],\"inv\":[],\"ml\":[],\"t\":\"Obj\"},{\"d\":false,\"f\":[],\"hide_aggr\":[],\"inv\":[],\"ml\":[\"R!bbyE*nkGAZSttm3Leg\",\"YtTzn)1PNNG87wYuT]kK\",\"Hxu:LJTmTL1a+w(vMs(O\",\"ZsKuiYBOObGLltGQXLp(\",\"YDGyL0IOM]*-FlJkTQ(S\"],\"t\":\"Hidden\"}]}",
+      "templates": [
+        {
+          "u": "GWIrAuMQ[fZ;%BB&WKI:",
+          "tt": "Id",
+          "type": "ft_int",
+          "usg": "NOT_USAGE",
+          "num": 0,
+          "order": 0,
+          "lib": "YtTzn)1PNNG87wYuT]kK",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "auto",
+              "i": 0,
+              "o": "GWIrAuMQ[fZ;%BB&WKI:",
+              "t": "GWIrAuMQ[fZ;%BB&WKI:"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"displayConvertUnitButton\":false,\"groupSeparator\":false,\"incDelta\":0.0,\"showCalc\":false,\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": true,
+          "readonly": true
+        },
+        {
+          "u": "[RumypB&M[ExzrPk]ah2",
+          "tt": "DisplayName",
+          "type": "ft_string",
+          "usg": "USAGE_IN_TITLE",
+          "num": 1,
+          "order": 1,
+          "lib": "YtTzn)1PNNG87wYuT]kK",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "",
+              "i": 2,
+              "o": "[RumypB&M[ExzrPk]ah2",
+              "t": "[RumypB&M[ExzrPk]ah2"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"fieldColorTarget\":0,\"fieldDelimiter\":\"\",\"textDrawable\":false}",
+          "unique": false,
+          "readonly": true
+        },
+        {
+          "u": "J3I[I0g>GK7(pYI#cCar",
+          "tt": "BaseObjType",
+          "type": "ft_lib_entry",
+          "usg": "NOT_USAGE",
+          "num": 5,
+          "order": 2,
+          "lib": "YtTzn)1PNNG87wYuT]kK",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "_index_{\"i\":1,\"t\":\"ObjType\"}",
+              "i": 0,
+              "o": "J3I[I0g>GK7(pYI#cCar",
+              "t": "J3I[I0g>GK7(pYI#cCar"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"attrJsonTemplates\":[],\"relationType\":1,\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        },
+        {
+          "u": ">9tGxSXlutA3X0U-KgTy",
+          "tt": "isObjType",
+          "type": "ft_lib_entry",
+          "usg": "NOT_USAGE",
+          "num": 6,
+          "order": 3,
+          "lib": "YtTzn)1PNNG87wYuT]kK",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "_index_{\"i\":1,\"t\":\"ObjType\"}",
+              "i": 0,
+              "o": ">9tGxSXlutA3X0U-KgTy",
+              "t": ">9tGxSXlutA3X0U-KgTy"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"attrJsonTemplates\":[],\"relationType\":0,\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        },
+        {
+          "u": "QOp;1s9kTetcbrR[3(HI",
+          "tt": "created",
+          "type": "ft_date_time",
+          "usg": "NOT_USAGE",
+          "num": 8,
+          "order": 4,
+          "lib": "YtTzn)1PNNG87wYuT]kK",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "i": 2,
+              "o": "QOp;1s9kTetcbrR[3(HI",
+              "t": "QOp;1s9kTetcbrR[3(HI"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"dateTimeFormats\":{\"dateFormatLang\":\"de_DE\",\"shortDateFormat\":\"dd.MM.yy\"},\"endYear\":2100,\"startYear\":1900,\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        },
+        {
+          "u": "PAL*Miq>;T+fCjStVk@O",
+          "tt": "Interfaces",
+          "type": "ft_subheader",
+          "usg": "NOT_USAGE",
+          "num": 2,
+          "order": 5,
+          "lib": "YtTzn)1PNNG87wYuT]kK",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "",
+              "i": 0,
+              "o": "PAL*Miq>;T+fCjStVk@O",
+              "t": "PAL*Miq>;T+fCjStVk@O"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"fieldColorTarget\":0,\"font\":{\"color\":-13783129,\"defaultColor\":false,\"family\":\"sans-serif\",\"size\":18,\"style\":1},\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        },
+        {
+          "u": "TFGvZE>YnR+*21QN85*V",
+          "tt": "Obj",
+          "type": "ft_lib_entry",
+          "usg": "NOT_USAGE",
+          "num": 3,
+          "order": 6,
+          "lib": "YtTzn)1PNNG87wYuT]kK",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "_index_{\"i\":2,\"t\":\"Obj\"}",
+              "i": 0,
+              "o": "TFGvZE>YnR+*21QN85*V",
+              "t": "TFGvZE>YnR+*21QN85*V"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"attrJsonTemplates\":[],\"relationType\":2,\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": true
+        },
+        {
+          "u": "#i*iR018gD*:D*-VV%pa",
+          "tt": "ObjType",
+          "type": "ft_lib_entry",
+          "usg": "NOT_USAGE",
+          "num": 4,
+          "order": 7,
+          "lib": "YtTzn)1PNNG87wYuT]kK",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "_index_{\"i\":1,\"t\":\"ObjType\"}",
+              "i": 0,
+              "o": "#i*iR018gD*:D*-VV%pa",
+              "t": "#i*iR018gD*:D*-VV%pa"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"attrJsonTemplates\":[],\"relationType\":1,\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": true
+        },
+        {
+          "u": "LSKj*pnu)+uGTOO5g6O2",
+          "tt": "Person",
+          "type": "ft_lib_entry",
+          "usg": "NOT_USAGE",
+          "num": 7,
+          "order": 8,
+          "lib": "YtTzn)1PNNG87wYuT]kK",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "_index_{\"i\":3,\"t\":\"Person\"}",
+              "i": 0,
+              "o": "LSKj*pnu)+uGTOO5g6O2",
+              "t": "LSKj*pnu)+uGTOO5g6O2"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"attrJsonTemplates\":[],\"relationType\":2,\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        },
+        {
+          "u": "]]VZjgfwGUFY;8:F5M>b",
+          "tt": "ActivityType",
+          "type": "ft_lib_entry",
+          "usg": "NOT_USAGE",
+          "num": 9,
+          "order": 9,
+          "lib": "YtTzn)1PNNG87wYuT]kK",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "_index_{\"i\":4,\"t\":\"ActivityType\"}",
+              "i": 0,
+              "o": "]]VZjgfwGUFY;8:F5M>b",
+              "t": "]]VZjgfwGUFY;8:F5M>b"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"attrJsonTemplates\":[],\"relationType\":2,\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        }
+      ],
+      "scripts_permissions": "{\"fileRead\":true,\"fileWrite\":true,\"libraries\":true,\"librariesIds\":[],\"librariesTitles\":{},\"network\":false}"
+    },
+    {
       "title": "Person",
       "id": "ZsKuiYBOObGLltGQXLp(",
       "color": -2236963,
       "icon": "flat:user.png",
-      "unique_names": true,
+      "unique_names": false,
       "triggers": "[{\"enabled\":true,\"event\":\"MODIFY_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterSave\",\"script\":\"var o \\u003d new Obj(entry());\\no.Save();\"},{\"enabled\":true,\"event\":\"CREATE_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterCreate\",\"script\":\"var o \\u003d new Obj(entry());\\no.Create(lib().title);\"}]",
       "entry_pages": "{\"pages\":[{\"d\":true,\"f\":[0,1,2,3,4,5],\"hide_aggr\":[],\"inv\":[],\"ml\":[],\"t\":\"Person\"},{\"d\":false,\"f\":[],\"hide_aggr\":[],\"inv\":[],\"ml\":[\"YtTzn)1PNNG87wYuT]kK\"],\"t\":\"Hidden\"}]}",
       "templates": [
@@ -93,7 +643,7 @@
           "hint": "",
           "cnt": [
             {
-              "s": "_index_{\"i\":3,\"t\":\"Obj\"}",
+              "s": "_index_{\"i\":2,\"t\":\"Obj\"}",
               "i": 0,
               "o": "Ejmp)A1*B5h&<@%kIeGd",
               "t": "Ejmp)A1*B5h&<@%kIeGd"
@@ -266,31 +816,31 @@
       "scripts_permissions": "{\"fileRead\":true,\"fileWrite\":true,\"libraries\":true,\"librariesIds\":[],\"librariesTitles\":{},\"network\":false}"
     },
     {
-      "title": "ObjType",
-      "id": "Hxu:LJTmTL1a+w(vMs(O",
+      "title": "ActivityType",
+      "id": "YDGyL0IOM]*-FlJkTQ(S",
       "color": -2236963,
       "icon": "flat:folder_blue.png",
-      "unique_names": true,
-      "triggers": "[{\"enabled\":true,\"event\":\"MODIFY_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterSave\",\"script\":\"var o \\u003d new Obj(entry());\\no.Save();\"},{\"enabled\":true,\"event\":\"CREATE_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterCreate\",\"script\":\"var o \\u003d new Obj(entry());\\no.Create(lib().title);\"},{\"enabled\":true,\"event\":\"LINK_ENTRY\",\"jsLibs\":[],\"moment\":\"BEFORE_SAVE\",\"name\":\"linkedToObj\",\"script\":\"var baseName;\\nvar objTypeName;\\n\\nif(masterLib().title \\u003d\\u003d \\\"Obj\\\") {\\n  baseName \\u003d masterEntry().field(\\\"BaseObjType\\\")[0].field(\\\"Name\\\");\\n  objTypeName \\u003d entry().field(\\\"Name\\\");\\n  if(baseName !\\u003d objTypeName) {\\n    var typeLib \\u003d libByName(objTypeName);\\n    var iFace \\u003d new Object();\\n    iFace \\u003d typeLib.create(iFace);\\n    masterEntry().link(objTypeName, iFace);\\n    iFace.link(\\\"Obj\\\", masterEntry());\\n  }\\n}\"},{\"attrJson\":\"{\\\"arguementsTemplates\\\":[]}\",\"enabled\":true,\"event\":\"ACTION\",\"filter\":\"{\\\"group\\\":0,\\\"items\\\":[{\\\"t\\\":\\\"ETtpkUz]!]mVE32*[WwB\\\",\\\"r\\\":\\\"{\\\\\\\"b\\\\\\\":true}\\\"}]}\",\"icon\":\"nova:add-circle-1.png\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"LIST_ITEM_ENTRY_CONTEXT\",\"name\":\"Create\",\"script\":\"var o \\u003d Create(entry().field(\\\"Name\\\"));\\no.Current.show();\"}]",
-      "entry_pages": "{\"pages\":[{\"d\":true,\"f\":[0,1,2,3,4,5,6],\"hide_aggr\":[],\"inv\":[],\"ml\":[],\"t\":\"ObjType\"},{\"d\":false,\"f\":[],\"hide_aggr\":[],\"inv\":[],\"ml\":[\"YtTzn)1PNNG87wYuT]kK\",\"Hxu:LJTmTL1a+w(vMs(O\"],\"t\":\"Hidden\"}]}",
+      "unique_names": false,
+      "triggers": "[{\"enabled\":true,\"event\":\"MODIFY_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterSave\",\"script\":\"var o \\u003d new Obj(entry());\\no.Save();\"},{\"enabled\":true,\"event\":\"CREATE_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterCreate\",\"script\":\"var o \\u003d new Obj(entry());\\no.Create(lib().title);\"},{\"attrJson\":\"{\\\"arguementsTemplates\\\":[]}\",\"enabled\":true,\"event\":\"ACTION\",\"filter\":\"{\\\"group\\\":0,\\\"items\\\":[{\\\"t\\\":\\\"ETtpkUz]!]mVE32*[WwB\\\",\\\"r\\\":\\\"{\\\\\\\"b\\\\\\\":true}\\\"},{\\\"t\\\":\\\"**w!\\u003e5RvKCCHe-auYiGr\\\",\\\"r\\\":\\\"{\\\\\\\"b\\\\\\\":true}\\\"}]}\",\"icon\":\"nova:add-circle-1.png\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"LIST_ITEM_ENTRY_CONTEXT\",\"name\":\"Create\",\"script\":\"var o \\u003d Create(entry().field(\\\"Name\\\"));\\no.Current.show();\"}]",
+      "entry_pages": "{\"pages\":[{\"d\":true,\"f\":[0,1,2,3,4,5,6],\"hide_aggr\":[],\"inv\":[],\"ml\":[],\"t\":\"ObjType\"},{\"d\":false,\"f\":[],\"hide_aggr\":[],\"inv\":[],\"ml\":[\"YtTzn)1PNNG87wYuT]kK\"],\"t\":\"Hidden\"}]}",
       "templates": [
         {
-          "u": "@I9i@i@eN;q@F[x0><rK",
+          "u": "H4CQLDmk]Pe<Eh5;:T82",
           "tt": "Obj",
           "type": "ft_lib_entry",
           "usg": "NOT_USAGE",
           "num": 0,
           "order": 0,
-          "lib": "Hxu:LJTmTL1a+w(vMs(O",
+          "lib": "YDGyL0IOM]*-FlJkTQ(S",
           "r": false,
           "stats": "",
           "hint": "",
           "cnt": [
             {
-              "s": "_index_{\"i\":3,\"t\":\"Obj\"}",
+              "s": "_index_{\"i\":2,\"t\":\"Obj\"}",
               "i": 0,
-              "o": "@I9i@i@eN;q@F[x0><rK",
-              "t": "@I9i@i@eN;q@F[x0><rK"
+              "o": "H4CQLDmk]Pe<Eh5;:T82",
+              "t": "H4CQLDmk]Pe<Eh5;:T82"
             }
           ],
           "depend": "",
@@ -306,251 +856,22 @@
           "readonly": false
         },
         {
-          "u": "Ub-nC#Axl5lplPzs3:cb",
+          "u": "@p<2uzSO-N]-uZpn0-ck",
           "tt": "DisplayName",
           "type": "ft_string",
           "usg": "USAGE_IN_TITLE",
           "num": 1,
           "order": 1,
-          "lib": "Hxu:LJTmTL1a+w(vMs(O",
+          "lib": "YDGyL0IOM]*-FlJkTQ(S",
           "r": false,
           "stats": "",
           "hint": "",
           "cnt": [
             {
-              "s": "",
+              "s": "new ActivityType",
               "i": 2,
-              "o": "Ub-nC#Axl5lplPzs3:cb",
-              "t": "Ub-nC#Axl5lplPzs3:cb"
-            }
-          ],
-          "depend": "",
-          "disp_title": true,
-          "entry_color": false,
-          "show_in_table": true,
-          "column_width": 100,
-          "week_event": 0,
-          "autofill": "",
-          "card_align": 0,
-          "json_options": "{\"fieldColorTarget\":0,\"textDrawable\":false}",
-          "unique": false,
-          "readonly": true
-        },
-        {
-          "u": "UIG9[N540SL7A+[MLc*(",
-          "tt": "Name",
-          "type": "ft_string",
-          "usg": "NOT_USAGE",
-          "num": 2,
-          "order": 2,
-          "lib": "Hxu:LJTmTL1a+w(vMs(O",
-          "r": false,
-          "stats": "",
-          "hint": "",
-          "cnt": [
-            {
-              "s": "",
-              "i": 2,
-              "o": "UIG9[N540SL7A+[MLc*(",
-              "t": "UIG9[N540SL7A+[MLc*("
-            }
-          ],
-          "depend": "",
-          "disp_title": true,
-          "entry_color": false,
-          "show_in_table": true,
-          "column_width": 100,
-          "week_event": 0,
-          "autofill": "",
-          "card_align": 0,
-          "json_options": "{\"fieldColorTarget\":0,\"textDrawable\":false}",
-          "unique": false,
-          "readonly": false
-        },
-        {
-          "u": "ETtpkUz]!]mVE32*[WwB",
-          "tt": "ObjType.Creatable",
-          "type": "ft_boolean",
-          "usg": "NOT_USAGE",
-          "num": 6,
-          "order": 3,
-          "lib": "Hxu:LJTmTL1a+w(vMs(O",
-          "r": false,
-          "stats": "",
-          "hint": "",
-          "cnt": [
-            {
-              "s": "Ja::Nein::0",
-              "i": 0,
-              "o": "ETtpkUz]!]mVE32*[WwB",
-              "t": "ETtpkUz]!]mVE32*[WwB"
-            }
-          ],
-          "depend": "",
-          "disp_title": true,
-          "entry_color": false,
-          "show_in_table": true,
-          "column_width": 100,
-          "week_event": 0,
-          "autofill": "",
-          "card_align": 0,
-          "json_options": "{\"fieldColorTarget\":0,\"textDrawable\":false}",
-          "unique": false,
-          "readonly": false
-        },
-        {
-          "u": "MdEhk<BzPPuIGMOn0Wpk",
-          "tt": "DisplayNameStructure",
-          "type": "ft_string",
-          "usg": "NOT_USAGE",
-          "num": 3,
-          "order": 4,
-          "lib": "Hxu:LJTmTL1a+w(vMs(O",
-          "r": false,
-          "stats": "",
-          "hint": "",
-          "cnt": [
-            {
-              "s": "this.Id()",
-              "i": 2,
-              "o": "MdEhk<BzPPuIGMOn0Wpk",
-              "t": "MdEhk<BzPPuIGMOn0Wpk"
-            }
-          ],
-          "depend": "",
-          "disp_title": true,
-          "entry_color": false,
-          "show_in_table": true,
-          "column_width": 100,
-          "week_event": 0,
-          "autofill": "",
-          "card_align": 0,
-          "json_options": "{\"fieldColorTarget\":0,\"textDrawable\":false}",
-          "unique": false,
-          "readonly": false
-        },
-        {
-          "u": "*j+x]:FDmgkobR-b#Cq<",
-          "tt": "PropertiesToSync",
-          "type": "ft_multy_str_list",
-          "usg": "NOT_USAGE",
-          "num": 4,
-          "order": 5,
-          "lib": "Hxu:LJTmTL1a+w(vMs(O",
-          "r": false,
-          "stats": "",
-          "hint": "",
-          "cnt": [
-            {
-              "s": "{\"sl\":[{\"t\":\"Id\",\"c\":2,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"DisplayName\",\"c\":1,\"i\":\"\",\"def\":true,\"c_text\":false}],\"sort\":false}",
-              "i": 8,
-              "o": "*j+x]:FDmgkobR-b#Cq<",
-              "t": "*j+x]:FDmgkobR-b#Cq<"
-            }
-          ],
-          "depend": "",
-          "disp_title": true,
-          "entry_color": false,
-          "show_in_table": true,
-          "column_width": 100,
-          "week_event": 0,
-          "autofill": "",
-          "card_align": 0,
-          "json_options": "{\"delimiter\":\", \",\"fieldColorTarget\":0,\"textDrawable\":false}",
-          "unique": false,
-          "readonly": false
-        },
-        {
-          "u": "MN-8mk*kEo>]z(90*ii;",
-          "tt": "InterfaceTypes",
-          "type": "ft_lib_entry",
-          "usg": "NOT_USAGE",
-          "num": 5,
-          "order": 6,
-          "lib": "Hxu:LJTmTL1a+w(vMs(O",
-          "r": false,
-          "stats": "",
-          "hint": "",
-          "cnt": [
-            {
-              "s": "_index_{\"i\":2,\"t\":\"ObjType\"}",
-              "i": 0,
-              "o": "MN-8mk*kEo>]z(90*ii;",
-              "t": "MN-8mk*kEo>]z(90*ii;"
-            }
-          ],
-          "depend": "",
-          "disp_title": true,
-          "entry_color": false,
-          "show_in_table": true,
-          "column_width": 100,
-          "week_event": 0,
-          "autofill": "",
-          "card_align": 0,
-          "json_options": "{\"attrJsonTemplates\":[],\"relationType\":0,\"fieldColorTarget\":0,\"textDrawable\":false}",
-          "unique": false,
-          "readonly": false
-        }
-      ],
-      "scripts_permissions": "{\"fileRead\":true,\"fileWrite\":true,\"libraries\":true,\"librariesIds\":[],\"librariesTitles\":{},\"network\":false}"
-    },
-    {
-      "title": "Obj",
-      "id": "YtTzn)1PNNG87wYuT]kK",
-      "color": -2236963,
-      "icon": "flat:folder_blue.png",
-      "unique_names": true,
-      "triggers": "[{\"attrJson\":\"{\\\"arguementsTemplates\\\":[]}\",\"enabled\":true,\"event\":\"ACTION\",\"icon\":\"nova:download-computer.png\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"LIBRARY_CONTEXT\",\"name\":\"InitializeDB\",\"script\":\"if(lib().entries().length !\\u003d 0) {\\n  message(\\\"This is not an empty library!\\\")\\n  exit();\\n}\\nvar obj \\u003d CreateObjType(\\\"Obj\\\");\\nvar objType \\u003d CreateObjType(\\\"ObjType\\\");\\nobj.field(\\\"Obj\\\")[0].link(\\\"BaseObjType\\\", objType);\\nobj.field(\\\"Obj\\\")[0].link(\\\"isObjType\\\", objType);\\nobjType.link(\\\"InterfaceTypes\\\", objType);\\n\\n// Settings\\nobj.set(\\\"DisplayNameStructure\\\", \\\"this.field(\\u0027Id\\u0027)\\\");\\nobjType.set(\\\"DisplayNameStructure\\\", \\\"this.field(\\u0027Name\\u0027)\\\");\\n\\n// Update\\nobj \\u003d new Obj(obj);\\nobjType \\u003d new Obj(objType);\\nobj.Save();\\nobjType.Save();\\n\\n// Person\\nvar person \\u003d Create(\\\"ObjType\\\");\\nperson.set(\\\"Name\\\", \\\"Person\\\");\\nperson.set(\\\"DisplayNameStructure\\\", \\\"this.field(\\u0027FirstName\\u0027) + \\u0027 \\u0027 + this.field(\\u0027LastName\\u0027)\\\");\\nperson.Current.link(\\\"InterfaceTypes\\\", obj.Current);\\nperson.Current.link(\\\"InterfaceTypes\\\", person.Current);\\nperson.Save();\"},{\"enabled\":true,\"event\":\"MODIFY_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterSave\",\"script\":\"var o \\u003d new Obj(entry());\\no.Save();\"},{\"enabled\":true,\"event\":\"CREATE_ENTRY\",\"jsLibs\":[\"https://raw.githubusercontent.com/Domixy500/MementoDBExtensions/main/BaseObjectClass.js\"],\"moment\":\"AFTER_SAVE\",\"name\":\"afterCreate\",\"script\":\"var o \\u003d new Obj(entry());\\no.Create(lib().title);\"}]",
-      "entry_pages": "{\"pages\":[{\"d\":true,\"f\":[0,1,2,3,4,5,6,7,8],\"hide_aggr\":[],\"inv\":[],\"ml\":[],\"t\":\"Obj\"},{\"d\":false,\"f\":[],\"hide_aggr\":[],\"inv\":[],\"ml\":[\"R!bbyE*nkGAZSttm3Leg\",\"YtTzn)1PNNG87wYuT]kK\",\"Hxu:LJTmTL1a+w(vMs(O\",\"ZsKuiYBOObGLltGQXLp(\"],\"t\":\"Hidden\"}]}",
-      "templates": [
-        {
-          "u": "GWIrAuMQ[fZ;%BB&WKI:",
-          "tt": "Id",
-          "type": "ft_int",
-          "usg": "NOT_USAGE",
-          "num": 0,
-          "order": 0,
-          "lib": "YtTzn)1PNNG87wYuT]kK",
-          "r": false,
-          "stats": "",
-          "hint": "",
-          "cnt": [
-            {
-              "s": "auto",
-              "i": 0,
-              "o": "GWIrAuMQ[fZ;%BB&WKI:",
-              "t": "GWIrAuMQ[fZ;%BB&WKI:"
-            }
-          ],
-          "depend": "",
-          "disp_title": true,
-          "entry_color": false,
-          "show_in_table": true,
-          "column_width": 100,
-          "week_event": 0,
-          "autofill": "",
-          "card_align": 0,
-          "json_options": "{\"displayConvertUnitButton\":false,\"groupSeparator\":false,\"incDelta\":0.0,\"showCalc\":false,\"fieldColorTarget\":0,\"textDrawable\":false}",
-          "unique": true,
-          "readonly": true
-        },
-        {
-          "u": "[RumypB&M[ExzrPk]ah2",
-          "tt": "DisplayName",
-          "type": "ft_string",
-          "usg": "USAGE_IN_TITLE",
-          "num": 1,
-          "order": 1,
-          "lib": "YtTzn)1PNNG87wYuT]kK",
-          "r": false,
-          "stats": "",
-          "hint": "",
-          "cnt": [
-            {
-              "s": "",
-              "i": 2,
-              "o": "[RumypB&M[ExzrPk]ah2",
-              "t": "[RumypB&M[ExzrPk]ah2"
+              "o": "@p<2uzSO-N]-uZpn0-ck",
+              "t": "@p<2uzSO-N]-uZpn0-ck"
             }
           ],
           "depend": "",
@@ -566,22 +887,22 @@
           "readonly": true
         },
         {
-          "u": "J3I[I0g>GK7(pYI#cCar",
-          "tt": "BaseObjType",
-          "type": "ft_lib_entry",
+          "u": "%sAPvpAwMP9bV0:(eEsz",
+          "tt": "Name",
+          "type": "ft_string",
           "usg": "NOT_USAGE",
-          "num": 5,
+          "num": 2,
           "order": 2,
-          "lib": "YtTzn)1PNNG87wYuT]kK",
+          "lib": "YDGyL0IOM]*-FlJkTQ(S",
           "r": false,
           "stats": "",
           "hint": "",
           "cnt": [
             {
-              "s": "_index_{\"i\":2,\"t\":\"ObjType\"}",
-              "i": 0,
-              "o": "J3I[I0g>GK7(pYI#cCar",
-              "t": "J3I[I0g>GK7(pYI#cCar"
+              "s": "",
+              "i": 2,
+              "o": "%sAPvpAwMP9bV0:(eEsz",
+              "t": "%sAPvpAwMP9bV0:(eEsz"
             }
           ],
           "depend": "",
@@ -592,27 +913,120 @@
           "week_event": 0,
           "autofill": "",
           "card_align": 0,
-          "json_options": "{\"attrJsonTemplates\":[],\"relationType\":1,\"fieldColorTarget\":0,\"textDrawable\":false}",
-          "unique": false,
+          "json_options": "{\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": true,
           "readonly": false
         },
         {
-          "u": ">9tGxSXlutA3X0U-KgTy",
-          "tt": "isObjType",
-          "type": "ft_lib_entry",
+          "u": "**w!>5RvKCCHe-auYiGr",
+          "tt": "ObjType.Creatable",
+          "type": "ft_boolean",
           "usg": "NOT_USAGE",
           "num": 6,
           "order": 3,
-          "lib": "YtTzn)1PNNG87wYuT]kK",
+          "lib": "YDGyL0IOM]*-FlJkTQ(S",
           "r": false,
           "stats": "",
           "hint": "",
           "cnt": [
             {
-              "s": "_index_{\"i\":2,\"t\":\"ObjType\"}",
+              "s": "Ja::Nein::0",
               "i": 0,
-              "o": ">9tGxSXlutA3X0U-KgTy",
-              "t": ">9tGxSXlutA3X0U-KgTy"
+              "o": "**w!>5RvKCCHe-auYiGr",
+              "t": "**w!>5RvKCCHe-auYiGr"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        },
+        {
+          "u": "X5sZ+kV]<D%*G*NufJA3",
+          "tt": "DisplayNameStructure",
+          "type": "ft_string",
+          "usg": "NOT_USAGE",
+          "num": 3,
+          "order": 4,
+          "lib": "YDGyL0IOM]*-FlJkTQ(S",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "this.Id()",
+              "i": 2,
+              "o": "X5sZ+kV]<D%*G*NufJA3",
+              "t": "X5sZ+kV]<D%*G*NufJA3"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        },
+        {
+          "u": "IUTty0OM[b*0&Xf)A![I",
+          "tt": "PropertiesToSync",
+          "type": "ft_multy_str_list",
+          "usg": "NOT_USAGE",
+          "num": 4,
+          "order": 5,
+          "lib": "YDGyL0IOM]*-FlJkTQ(S",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "{\"sl\":[{\"t\":\"Id\",\"c\":2,\"i\":\"\",\"def\":false,\"c_text\":false},{\"t\":\"DisplayName\",\"c\":1,\"i\":\"\",\"def\":true,\"c_text\":false},{\"t\":\"ObjType.Creatable\",\"c\":3,\"def\":false,\"c_text\":false},{\"t\":\"Name\",\"c\":4,\"def\":false,\"c_text\":false},{\"t\":\"DisplayNameStructure\",\"c\":5,\"def\":false,\"c_text\":false},{\"t\":\"PropertiesToSync\",\"c\":6,\"def\":false,\"c_text\":false},{\"t\":\"InterfaceTypes\",\"c\":7,\"def\":false,\"c_text\":false}],\"sort\":false}",
+              "i": 8,
+              "o": "IUTty0OM[b*0&Xf)A![I",
+              "t": "IUTty0OM[b*0&Xf)A![I"
+            }
+          ],
+          "depend": "",
+          "disp_title": true,
+          "entry_color": false,
+          "show_in_table": true,
+          "column_width": 100,
+          "week_event": 0,
+          "autofill": "",
+          "card_align": 0,
+          "json_options": "{\"delimiter\":\", \",\"fieldColorTarget\":0,\"textDrawable\":false}",
+          "unique": false,
+          "readonly": false
+        },
+        {
+          "u": "(:[DDaBVtyTtzMqZhj]6",
+          "tt": "InterfaceTypes",
+          "type": "ft_lib_entry",
+          "usg": "NOT_USAGE",
+          "num": 5,
+          "order": 6,
+          "lib": "YDGyL0IOM]*-FlJkTQ(S",
+          "r": false,
+          "stats": "",
+          "hint": "",
+          "cnt": [
+            {
+              "s": "_index_{\"i\":1,\"t\":\"ObjType\"}",
+              "i": 0,
+              "o": "(:[DDaBVtyTtzMqZhj]6",
+              "t": "(:[DDaBVtyTtzMqZhj]6"
             }
           ],
           "depend": "",
@@ -624,160 +1038,6 @@
           "autofill": "",
           "card_align": 0,
           "json_options": "{\"attrJsonTemplates\":[],\"relationType\":0,\"fieldColorTarget\":0,\"textDrawable\":false}",
-          "unique": false,
-          "readonly": false
-        },
-        {
-          "u": "QOp;1s9kTetcbrR[3(HI",
-          "tt": "created",
-          "type": "ft_date_time",
-          "usg": "NOT_USAGE",
-          "num": 8,
-          "order": 4,
-          "lib": "YtTzn)1PNNG87wYuT]kK",
-          "r": false,
-          "stats": "",
-          "hint": "",
-          "cnt": [
-            {
-              "i": 2,
-              "o": "QOp;1s9kTetcbrR[3(HI",
-              "t": "QOp;1s9kTetcbrR[3(HI"
-            }
-          ],
-          "depend": "",
-          "disp_title": true,
-          "entry_color": false,
-          "show_in_table": true,
-          "column_width": 100,
-          "week_event": 0,
-          "autofill": "",
-          "card_align": 0,
-          "json_options": "{\"dateTimeFormats\":{\"dateFormatLang\":\"de_DE\",\"shortDateFormat\":\"dd.MM.yy\"},\"endYear\":2100,\"startYear\":1900,\"fieldColorTarget\":0,\"textDrawable\":false}",
-          "unique": false,
-          "readonly": false
-        },
-        {
-          "u": "PAL*Miq>;T+fCjStVk@O",
-          "tt": "Interfaces",
-          "type": "ft_subheader",
-          "usg": "NOT_USAGE",
-          "num": 2,
-          "order": 5,
-          "lib": "YtTzn)1PNNG87wYuT]kK",
-          "r": false,
-          "stats": "",
-          "hint": "",
-          "cnt": [
-            {
-              "s": "",
-              "i": 0,
-              "o": "PAL*Miq>;T+fCjStVk@O",
-              "t": "PAL*Miq>;T+fCjStVk@O"
-            }
-          ],
-          "depend": "",
-          "disp_title": true,
-          "entry_color": false,
-          "show_in_table": true,
-          "column_width": 100,
-          "week_event": 0,
-          "autofill": "",
-          "card_align": 0,
-          "json_options": "{\"fieldColorTarget\":0,\"font\":{\"color\":-13783129,\"defaultColor\":false,\"family\":\"sans-serif\",\"size\":18,\"style\":1},\"textDrawable\":false}",
-          "unique": false,
-          "readonly": false
-        },
-        {
-          "u": "TFGvZE>YnR+*21QN85*V",
-          "tt": "Obj",
-          "type": "ft_lib_entry",
-          "usg": "NOT_USAGE",
-          "num": 3,
-          "order": 6,
-          "lib": "YtTzn)1PNNG87wYuT]kK",
-          "r": false,
-          "stats": "",
-          "hint": "",
-          "cnt": [
-            {
-              "s": "_index_{\"i\":3,\"t\":\"Obj\"}",
-              "i": 0,
-              "o": "TFGvZE>YnR+*21QN85*V",
-              "t": "TFGvZE>YnR+*21QN85*V"
-            }
-          ],
-          "depend": "",
-          "disp_title": true,
-          "entry_color": false,
-          "show_in_table": true,
-          "column_width": 100,
-          "week_event": 0,
-          "autofill": "",
-          "card_align": 0,
-          "json_options": "{\"attrJsonTemplates\":[],\"relationType\":2,\"fieldColorTarget\":0,\"textDrawable\":false}",
-          "unique": false,
-          "readonly": true
-        },
-        {
-          "u": "#i*iR018gD*:D*-VV%pa",
-          "tt": "ObjType",
-          "type": "ft_lib_entry",
-          "usg": "NOT_USAGE",
-          "num": 4,
-          "order": 7,
-          "lib": "YtTzn)1PNNG87wYuT]kK",
-          "r": false,
-          "stats": "",
-          "hint": "",
-          "cnt": [
-            {
-              "s": "_index_{\"i\":2,\"t\":\"ObjType\"}",
-              "i": 0,
-              "o": "#i*iR018gD*:D*-VV%pa",
-              "t": "#i*iR018gD*:D*-VV%pa"
-            }
-          ],
-          "depend": "",
-          "disp_title": true,
-          "entry_color": false,
-          "show_in_table": true,
-          "column_width": 100,
-          "week_event": 0,
-          "autofill": "",
-          "card_align": 0,
-          "json_options": "{\"attrJsonTemplates\":[],\"relationType\":1,\"fieldColorTarget\":0,\"textDrawable\":false}",
-          "unique": false,
-          "readonly": true
-        },
-        {
-          "u": "LSKj*pnu)+uGTOO5g6O2",
-          "tt": "Person",
-          "type": "ft_lib_entry",
-          "usg": "NOT_USAGE",
-          "num": 7,
-          "order": 8,
-          "lib": "YtTzn)1PNNG87wYuT]kK",
-          "r": false,
-          "stats": "",
-          "hint": "",
-          "cnt": [
-            {
-              "s": "_index_{\"i\":1,\"t\":\"Person\"}",
-              "i": 0,
-              "o": "LSKj*pnu)+uGTOO5g6O2",
-              "t": "LSKj*pnu)+uGTOO5g6O2"
-            }
-          ],
-          "depend": "",
-          "disp_title": true,
-          "entry_color": false,
-          "show_in_table": true,
-          "column_width": 100,
-          "week_event": 0,
-          "autofill": "",
-          "card_align": 0,
-          "json_options": "{\"attrJsonTemplates\":[],\"relationType\":2,\"fieldColorTarget\":0,\"textDrawable\":false}",
           "unique": false,
           "readonly": false
         }
