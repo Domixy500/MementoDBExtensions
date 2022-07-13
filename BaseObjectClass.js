@@ -82,7 +82,19 @@ Obj.prototype.SyncProperties = function() {
 			iFace = this.Obj().field(this.Types()[j].field("Name"))[0];
 			if(iFace.id != this.Current.id) {
 				try {
-					iFace.set(propName, propValue);
+					if(typeof propValue == "object") {
+						try {
+							for(var k = 0; k < propValue.length; k++) {
+								message(propValue[k].field("DisplayName"));
+							}
+						}
+						catch(err) {
+							message(propValue[k]);
+						}
+					}
+					else {
+						iFace.set(propName, propValue);
+					}
 				}
 				catch(err) {
 					
