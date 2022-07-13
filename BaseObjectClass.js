@@ -84,6 +84,9 @@ Obj.prototype.SyncProperties = function() {
 				try {
 					if(typeof propValue == "object") {
 						try {
+							for(var k = 0; k < iFace.field(propName).length; k++) {
+								iFace.unlink(propName, iFace.field(propName)[k])
+							}
 							for(var k = 0; k < propValue.length; k++) {
 								message(propValue[k].field("DisplayName"));
 							}
