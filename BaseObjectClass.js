@@ -84,15 +84,17 @@ Obj.prototype.SyncProperties = function() {
 				try {
 					if(typeof propValue == "object") {
 						try {
-							for(var k = 0; k < iFace.field(propName).length; k++) {
-								iFace.unlink(propName, iFace.field(propName)[k])
+							if(iFace.field(propName).length > 0) {
+								for(var k = iFace.field(propName).length - 1; k => 0 ; k = k -1) {
+									iFace.unlink(propName, iFace.field(propName)[k])
+								}
 							}
 							for(var k = 0; k < propValue.length; k++) {
-								message(propValue[k].field("DisplayName"));
+								iFace.link(propName, propValue[k]);
 							}
 						}
 						catch(err) {
-							message(propValue[k]);
+							iFace.set(propName, propValue);
 						}
 					}
 					else {
