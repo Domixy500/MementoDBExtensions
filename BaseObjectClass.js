@@ -83,23 +83,52 @@ Obj.prototype.SyncProperties = function() {
 			if(iFace.id != this.Current.id) {
 				try {
 					if(typeof propValue == "object") {
-						try {
-							if(iFace.field(propName).length > 0) {
-								for(var k = iFace.field(propName).length - 1; k => 0 ; k = k -1) {
-									iFace.unlink(propName, iFace.field(propName)[k])
+						// link or multichoice field
+						if(propValue.length > 0) {
+							// at least 1 value
+							if(typeof propValue[0] == "string") {
+								// first element of multichoice is always of type "string"
+								iFace.set(propName, propValue);
+							}
+							else {
+								// linked field with entries
+								// remove all links in interface
+								iFace.set(propName, "");
+								// loop through each linked entry and add again to interface
+								for(var k = 0; k < propValue.length; k++) {
+									iFace.link(propName, propValue[k]);
 								}
 							}
-							for(var k = 0; k < propValue.length; k++) {
-								iFace.link(propName, propValue[k]);
-							}
 						}
-						catch(err) {
+						else {
+							// no value selected
 							iFace.set(propName, propValue);
 						}
 					}
 					else {
+						// all other fields
 						iFace.set(propName, propValue);
 					}
+					
+					
+					// if(typeof propValue == "object") {
+						// try {
+							// if(iFace.field(propName).length > 0) {
+								// for(var k = iFace.field(propName).length - 1; k => 0 ; k = k -1) {
+									// iFace.unlink(propName, iFace.field(propName)[k])
+								// }
+							// }
+							// for(var k = 0; k < propValue.length; k++) {
+								// iFace.link(propName, propValue[k]);
+							// }
+						// }
+						// catch(err) {
+							// iFace.set(propName, propValue);
+						// }
+					// }
+					// else {
+						// iFace.set(propName, propValue);
+					// }
 				}
 				catch(err) {
 					
