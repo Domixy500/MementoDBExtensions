@@ -109,29 +109,9 @@ Obj.prototype.SyncProperties = function() {
 						// all other fields
 						iFace.set(propName, propValue);
 					}
-					
-					
-					// if(typeof propValue == "object") {
-						// try {
-							// if(iFace.field(propName).length > 0) {
-								// for(var k = iFace.field(propName).length - 1; k => 0 ; k = k -1) {
-									// iFace.unlink(propName, iFace.field(propName)[k])
-								// }
-							// }
-							// for(var k = 0; k < propValue.length; k++) {
-								// iFace.link(propName, propValue[k]);
-							// }
-						// }
-						// catch(err) {
-							// iFace.set(propName, propValue);
-						// }
-					// }
-					// else {
-						// iFace.set(propName, propValue);
-					// }
 				}
 				catch(err) {
-					
+					log(this.Types()[j].field("Name") + " " + propName + ": " + err);
 				}
 			}
 		}
